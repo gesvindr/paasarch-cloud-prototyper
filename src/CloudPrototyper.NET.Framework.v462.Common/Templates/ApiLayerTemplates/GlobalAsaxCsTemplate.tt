@@ -1,0 +1,32 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.ApiLayerGenerators.GlobalAsaxCsGenerator" name="Model" #>
+using System.Web.Http;
+using System.Web.Http.Dispatcher;
+using ApiLayer.Utils;
+using Castle.Windsor;
+// Global.asax.cs
+namespace <#=Model.Namespace #>
+{
+    public class WebApiApplication : System.Web.HttpApplication
+    {
+        private IWindsorContainer _container;
+        protected void Application_Start()
+        {
+            GlobalConfiguration.Configure(WebApiConfig.Register);
+            InitContainer();
+        }
+        private void InitContainer()
+        {
+            _container = new WindsorContainer();
+
+            _container.Install(new <#= Model.Installer.Namespace #>.<#= Model.Installer.Name #>());
+            
+            GlobalConfiguration.Configuration.Services
+                .Replace(typeof(IHttpControllerActivator), new <#= Model.HttpActivator.Namespace #>.<#= Model.HttpActivator.Name #>(_container));
+        }
+    }
+}

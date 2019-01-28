@@ -1,0 +1,54 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.ApiLayerGenerators.Utils.CustomHttpActivatorGenerator" name="Model" #>
+using System;
+using System.Net.Http;
+using System.Web.Http.Controllers;
+using System.Web.Http.Dispatcher;
+using Castle.Windsor;
+// Http activator
+namespace <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : IHttpControllerActivator
+    {
+        public static IWindsorContainer Container;
+
+        public HttpActivator(IWindsorContainer container)
+        {
+            Container = container;
+        }
+
+        public IHttpController Create(
+            HttpRequestMessage request,
+            HttpControllerDescriptor controllerDescriptor,
+            Type controllerType)
+        {
+            var controller =
+                (IHttpController)Container.Resolve(controllerType);
+
+            request.RegisterForDispose(
+                new Release(
+                    () => Container.Release(controller)));
+
+            return controller;
+        }
+
+        private class Release : IDisposable
+        {
+            private readonly Action _release;
+
+            public Release(Action release)
+            {
+                _release = release;
+            }
+
+            public void Dispose()
+            {
+                _release();
+            }
+        }
+    }
+}

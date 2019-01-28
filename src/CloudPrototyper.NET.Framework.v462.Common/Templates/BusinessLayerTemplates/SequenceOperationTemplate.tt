@@ -1,0 +1,42 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.BusinessLayerGenerators.SequenceOperationGenerator" name="Model" #>
+using System.Collections.Generic;
+// sequence operation
+namespace  <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.OperationInterface.Namespace #>.<#= Model.OperationInterface.Name #>
+    {
+		public const string Key = "<#= Model.ModelParameters.Name #>";
+<# foreach(var operation in Model.InnerOperations) { #>
+		public <#= operation.Namespace #>.<#= operation.Name #> <#= operation.Name #> { get; set; }
+<# } #>
+
+		public <#= Model.Name #>(
+<# foreach(var operation in Model.InnerOperations) {  if(Model.InnerOperations.Last().Equals(operation)) {#>
+		<#= operation.Namespace #>.<#= operation.Name #> <#= operation.Name.ToLower() #>
+<# } else { #>
+		<#= operation.Namespace #>.<#= operation.Name #> <#= operation.Name.ToLower() #>,
+<# }} #>
+		) 
+
+		{
+<# foreach(var operation in Model.InnerOperations) { #>
+			this.<#= operation.Name #> = <#= operation.Name.ToLower() #>;
+<# } #>
+		}
+
+		public void Execute(List<string> output)
+		{
+			for(int i = 0; i < <#= Model.ModelParameters.NumberOfRepetitions #>; i++) 
+			{
+<# foreach(var operation in Model.InnerOperations) { #>
+			<#= operation.Name #>.Execute(output);
+<# } #>
+			}
+		}
+    }
+}

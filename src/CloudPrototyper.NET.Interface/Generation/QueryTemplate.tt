@@ -1,0 +1,21 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Interface.Generation.QueryGenerator" name="Model" #>
+
+using System;
+using System.Collections.Generic;
+
+namespace  <#=Model.Namespace#>
+{
+	public class <#=Model.Name#>
+    {
+        public string PropertyName { get; set; }
+        public bool IsNominal { get; set; }
+        public string NominalParameter { get; set; }
+        public string MaxValue { get; set; }
+        public string MinValue { get; set; }
+    }
+}

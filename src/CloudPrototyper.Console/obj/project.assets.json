@@ -1,0 +1,1844 @@
+{
+  "version": 2,
+  "targets": {
+    ".NETFramework,Version=v4.6.2": {
+      "FluentFTP/16.4.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net40/FluentFTP.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FluentFTP.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.AppService.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.KeyVault.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Xml.Linq",
+          "System.Xml.XDocument",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.AppService.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.AppService.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Batch.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Batch.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Batch.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Cdn.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Cdn.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Cdn.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Compute.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.Network.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Compute.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Compute.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Dns.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Dns.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Dns.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.AppService.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Batch.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Cdn.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Compute.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Dns.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.KeyVault.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Network.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Redis.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ServiceBus.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Sql.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.TrafficManager.Fluent": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Graph.RBAC.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Graph.RBAC.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Graph.RBAC.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.KeyVault.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.Graph.RBAC.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.KeyVault.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.KeyVault.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Network.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Network.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Network.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Redis.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Redis.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Redis.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.ResourceManager.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure.Authentication": "[2.2.12, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.ResourceManager.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.ResourceManager.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.ServiceBus.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.ServiceBus.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.ServiceBus.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Sql.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Sql.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Sql.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Storage.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Storage.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Storage.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.TrafficManager.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.TrafficManager.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.TrafficManager.Fluent.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Clients.ActiveDirectory/3.13.9": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime/2.3.5": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.8"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Net",
+          "System.Net.Http",
+          "System.Net.Http.WebRequest",
+          "System.Runtime.Serialization",
+          "System.Xml",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure/3.3.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.5, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure.Authentication/2.2.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Clients.ActiveDirectory": "[2.28.3, 3.0.0)",
+          "Microsoft.Rest.ClientRuntime": "[2.3.5, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll": {}
+        }
+      },
+      "Newtonsoft.Json/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Net.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Net.Http.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net46/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Primitives": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net461/System.Security.Cryptography.Algorithms.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Primitives/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.X509Certificates/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "CloudPrototyper.Azure/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Benchmark/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Build.NET/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.ConfigProvider/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        }
+      },
+      "CloudPrototyper.DataGenerator/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Deployment.Azure/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.TblStorage": "1.0.0",
+          "FluentFTP": "16.4.1",
+          "Microsoft.Azure.Management.Fluent": "1.0.0",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "1.0.0",
+          "Microsoft.Azure.Management.ServiceBus.Fluent": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        }
+      },
+      "CloudPrototyper.Examples/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Computing": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.TblStorage": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Generator/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Interface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Model/1.0.0": {
+        "type": "project"
+      },
+      "CloudPrototyper.ModelResolver/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CloudPrototyper.DataGenerator": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.DataLayer": "1.0.0",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.1"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.Common/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.Computing/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.DataLayer/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.TblStorage/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.WebApi/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.WebJob/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Interface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.6.2/win7-x86": {
+      "FluentFTP/16.4.1": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Web"
+        ],
+        "compile": {
+          "lib/net40/FluentFTP.dll": {}
+        },
+        "runtime": {
+          "lib/net40/FluentFTP.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.AppService.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.KeyVault.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Xml.Linq",
+          "System.Xml.XDocument",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.AppService.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.AppService.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Batch.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Batch.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Batch.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Cdn.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Cdn.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Cdn.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Compute.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.Network.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Compute.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Compute.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Dns.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Dns.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Dns.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.AppService.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Batch.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Cdn.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Compute.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Dns.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.KeyVault.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Network.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Redis.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ServiceBus.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Sql.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.Storage.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.TrafficManager.Fluent": "[1.0.0, 2.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Graph.RBAC.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Graph.RBAC.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Graph.RBAC.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.KeyVault.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.Graph.RBAC.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.KeyVault.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.KeyVault.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Network.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Network.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Network.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Redis.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Redis.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Redis.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.ResourceManager.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure.Authentication": "[2.2.12, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.ResourceManager.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.ResourceManager.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.ServiceBus.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.ServiceBus.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.ServiceBus.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Sql.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Sql.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Sql.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.Storage.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.Storage.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.Storage.Fluent.dll": {}
+        }
+      },
+      "Microsoft.Azure.Management.TrafficManager.Fluent/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "[1.0.0, 2.0.0)",
+          "Microsoft.Rest.ClientRuntime.Azure": "[3.3.5, 4.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Azure.Management.TrafficManager.Fluent.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Azure.Management.TrafficManager.Fluent.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.Clients.ActiveDirectory/3.13.9": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+          "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime/2.3.5": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "6.0.8"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Net",
+          "System.Net.Http",
+          "System.Net.Http.WebRequest",
+          "System.Runtime.Serialization",
+          "System.Xml",
+          "mscorlib"
+        ],
+        "compile": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure/3.3.5": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Rest.ClientRuntime": "[2.3.5, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.dll": {}
+        }
+      },
+      "Microsoft.Rest.ClientRuntime.Azure.Authentication/2.2.12": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Clients.ActiveDirectory": "[2.28.3, 3.0.0)",
+          "Microsoft.Rest.ClientRuntime": "[2.3.5, 3.0.0)"
+        },
+        "compile": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll": {}
+        }
+      },
+      "Newtonsoft.Json/9.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "System.Net.Http/4.3.1": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.X509Certificates": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Net.Http.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Net.Http.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Algorithms/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Primitives": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.Algorithms.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.Algorithms.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Encoding/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Encoding.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Encoding.dll": {}
+        }
+      },
+      "System.Security.Cryptography.Primitives/4.3.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Security.Cryptography.Primitives.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Security.Cryptography.Primitives.dll": {}
+        }
+      },
+      "System.Security.Cryptography.X509Certificates/4.3.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Security.Cryptography.Encoding": "4.3.0"
+        },
+        "frameworkAssemblies": [
+          "System",
+          "System.Core",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Security.Cryptography.X509Certificates.dll": {}
+        }
+      },
+      "CloudPrototyper.Azure/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Benchmark/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Build.NET/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.ConfigProvider/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        }
+      },
+      "CloudPrototyper.DataGenerator/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Deployment.Azure/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.TblStorage": "1.0.0",
+          "FluentFTP": "16.4.1",
+          "Microsoft.Azure.Management.Fluent": "1.0.0",
+          "Microsoft.Azure.Management.ResourceManager.Fluent": "1.0.0",
+          "Microsoft.Azure.Management.ServiceBus.Fluent": "1.0.0",
+          "Newtonsoft.Json": "9.0.1"
+        }
+      },
+      "CloudPrototyper.Examples/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Computing": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.TblStorage": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Generator/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Interface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      },
+      "CloudPrototyper.Model/1.0.0": {
+        "type": "project"
+      },
+      "CloudPrototyper.ModelResolver/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.6.2",
+        "dependencies": {
+          "CloudPrototyper.DataGenerator": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.DataLayer": "1.0.0",
+          "Newtonsoft.Json": "9.0.1",
+          "System.Net.Http": "4.3.1"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.Common/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.Computing/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.DataLayer/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.TblStorage/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.WebApi/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Framework.v462.WebJob/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Azure": "1.0.0",
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0",
+          "CloudPrototyper.NET.Framework.v462.Common": "1.0.0",
+          "CloudPrototyper.NET.Interface": "1.0.0"
+        }
+      },
+      "CloudPrototyper.NET.Interface/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "CloudPrototyper.Interface": "1.0.0",
+          "CloudPrototyper.Model": "1.0.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FluentFTP/16.4.1": {
+      "sha512": "bJvymwM0ZZ+KDml9vHZ2H2bDY56Bo9Evtxb0ZDDgSRqbmqHj+z5ea7b25hfBsMRY6A3lHkyFEiQJoWgN/oXBBw==",
+      "type": "package",
+      "path": "fluentftp/16.4.1",
+      "files": [
+        "fluentftp.16.4.1.nupkg.sha512",
+        "fluentftp.nuspec",
+        "lib/dnxcore50/FluentFTP.deps.json",
+        "lib/dnxcore50/FluentFTP.dll",
+        "lib/net20/FluentFTP.dll",
+        "lib/net20/FluentFTP.xml",
+        "lib/net40/FluentFTP.dll",
+        "lib/net40/FluentFTP.xml",
+        "lib/netstandard1.4/FluentFTP.deps.json",
+        "lib/netstandard1.4/FluentFTP.dll",
+        "lib/netstandard1.6/FluentFTP.deps.json",
+        "lib/netstandard1.6/FluentFTP.dll"
+      ]
+    },
+    "Microsoft.Azure.Management.AppService.Fluent/1.0.0": {
+      "sha512": "tsB3SWKNjxBlQzRpyqWthkMRZ46gIlRrj4PDBOOh69PXABQSTmobwItwxJylCsmoaYN+TS5/5IlSA9fr++YNJQ==",
+      "type": "package",
+      "path": "microsoft.azure.management.appservice.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.AppService.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.AppService.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.AppService.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.AppService.Fluent.xml",
+        "microsoft.azure.management.appservice.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.appservice.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Batch.Fluent/1.0.0": {
+      "sha512": "Qoj/p43fMaGpJ+7kUqk8nQvLVex4Nu/ZZxubRGfWshPOiNesr/Vr1G8lP9mW7z9gc5hAzD6vxiy5UqunvCShdg==",
+      "type": "package",
+      "path": "microsoft.azure.management.batch.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Batch.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Batch.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Batch.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Batch.Fluent.xml",
+        "microsoft.azure.management.batch.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.batch.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Cdn.Fluent/1.0.0": {
+      "sha512": "PjK9DT5WqDswSt10Cyzdg8btEkQDYpOKfK/0qray5re64Immxsieq0El0hNUFDNHj1d//s0wlAbgxOfMTCQ+7A==",
+      "type": "package",
+      "path": "microsoft.azure.management.cdn.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Cdn.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Cdn.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Cdn.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Cdn.Fluent.xml",
+        "microsoft.azure.management.cdn.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.cdn.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Compute.Fluent/1.0.0": {
+      "sha512": "D2tA+YqhZ5y2A61kRI92cw926UYRfDgcCKyPPcZewvXvUaaRoM2YjC9AuV3nWMqK7eW4hNaKGY1Ub86/wB0uNQ==",
+      "type": "package",
+      "path": "microsoft.azure.management.compute.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Compute.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Compute.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Compute.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Compute.Fluent.xml",
+        "microsoft.azure.management.compute.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.compute.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Dns.Fluent/1.0.0": {
+      "sha512": "sU8ju00PsLbkJfmrEqxD+EHB9VNewir+ryMAlMFDKZln5WIy54YXjhRPvTlL/5otc09y0Ndh4Ra87CHXE3prKA==",
+      "type": "package",
+      "path": "microsoft.azure.management.dns.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Dns.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Dns.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Dns.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Dns.Fluent.xml",
+        "microsoft.azure.management.dns.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.dns.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Fluent/1.0.0": {
+      "sha512": "rUXAYz0oC4bJlagQKA9u82rPdiGd/fP8C2eSCkKZmhWSEjsj73uUTdDqEWsVR8dUPH3c2Xh2TVOADr25wroBuQ==",
+      "type": "package",
+      "path": "microsoft.azure.management.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Fluent.xml",
+        "microsoft.azure.management.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Graph.RBAC.Fluent/1.0.0": {
+      "sha512": "GM4MzXcSNwpLLre0KfU++ABah5S2hg+NP0ga2j0rpRwNUqkgSI8wijTrwjej1z63EEmkuTJncN/oO5BrBBdvpg==",
+      "type": "package",
+      "path": "microsoft.azure.management.graph.rbac.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Graph.RBAC.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Graph.RBAC.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Graph.RBAC.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Graph.RBAC.Fluent.xml",
+        "microsoft.azure.management.graph.rbac.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.graph.rbac.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.KeyVault.Fluent/1.0.0": {
+      "sha512": "dKa+zufExAfbgT1jRQfM3WFMf86QqHq9PY3srDt7HWCBAlfqi/rl29l7aaQDspHbrVQc6opIEfa0kL4rNUtlrQ==",
+      "type": "package",
+      "path": "microsoft.azure.management.keyvault.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.KeyVault.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.KeyVault.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.KeyVault.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.KeyVault.Fluent.xml",
+        "microsoft.azure.management.keyvault.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.keyvault.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Network.Fluent/1.0.0": {
+      "sha512": "UehPLI7dUXyxMJL/nISyULe5GrWcK4mmqRw+rlWoTd+HUKU7rP76aAOSQAAVLk+H4FeC5ZZSb0X+QuDL7SDozg==",
+      "type": "package",
+      "path": "microsoft.azure.management.network.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Network.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Network.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Network.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Network.Fluent.xml",
+        "microsoft.azure.management.network.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.network.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Redis.Fluent/1.0.0": {
+      "sha512": "CSB6JbhL85/b6q9zkMRrJkLhxkY3wOyXSUZMt20bA2vNztT0LqSQ6Zc6QhzwwNqkmK60l5aoiEA5hP4DFdTiQw==",
+      "type": "package",
+      "path": "microsoft.azure.management.redis.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Redis.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Redis.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Redis.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Redis.Fluent.xml",
+        "microsoft.azure.management.redis.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.redis.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.ResourceManager.Fluent/1.0.0": {
+      "sha512": "ssiSAF0lDOmHYfSFdiy9dncj4ouVOswuBzych8jxxnE3ccS7JtYZ289KxQype0syOLSr+ZhZ4Pb8SU43/pTcTA==",
+      "type": "package",
+      "path": "microsoft.azure.management.resourcemanager.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.ResourceManager.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.ResourceManager.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.ResourceManager.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.ResourceManager.Fluent.xml",
+        "microsoft.azure.management.resourcemanager.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.resourcemanager.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.ServiceBus.Fluent/1.0.0": {
+      "sha512": "g4R/+4g0sXQ1mbA7S/hfGjbjG4H1U38/uIgh7zJORiOUAO5w4UdpV97Lu3kxTXPmDkwUzPGXS7nHp3erJZcJIg==",
+      "type": "package",
+      "path": "microsoft.azure.management.servicebus.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.ServiceBus.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.ServiceBus.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.ServiceBus.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.ServiceBus.Fluent.xml",
+        "microsoft.azure.management.servicebus.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.servicebus.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Sql.Fluent/1.0.0": {
+      "sha512": "Np5os4xl+QVU7bwns5L5cfr6tMpjkqDGolH2tlDusttcjKteHBNhszWoF0xFGwdoos3L9PxPg9625MJQBRusHA==",
+      "type": "package",
+      "path": "microsoft.azure.management.sql.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Sql.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Sql.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Sql.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Sql.Fluent.xml",
+        "microsoft.azure.management.sql.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.sql.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.Storage.Fluent/1.0.0": {
+      "sha512": "HWyfJMUr8EPF2evqCx9g6NJuVAcibdAbB+cS5L68kfbY6QsGIGA3gfsW2fr0Acs5lWD/kVwu/tkE53+G2BRsaQ==",
+      "type": "package",
+      "path": "microsoft.azure.management.storage.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.Storage.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.Storage.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Storage.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.Storage.Fluent.xml",
+        "microsoft.azure.management.storage.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.storage.fluent.nuspec"
+      ]
+    },
+    "Microsoft.Azure.Management.TrafficManager.Fluent/1.0.0": {
+      "sha512": "+TUycq7eE+VcOwIgbmHean8or9p+F9ioeYxDTiZy0aK2Cmt22v0hd2Ja+71WqHTsB6APeaOtu5v28X1gl/ubqA==",
+      "type": "package",
+      "path": "microsoft.azure.management.trafficmanager.fluent/1.0.0",
+      "files": [
+        "lib/net45/Microsoft.Azure.Management.TrafficManager.Fluent.dll",
+        "lib/net45/Microsoft.Azure.Management.TrafficManager.Fluent.xml",
+        "lib/netstandard1.3/Microsoft.Azure.Management.TrafficManager.Fluent.dll",
+        "lib/netstandard1.3/Microsoft.Azure.Management.TrafficManager.Fluent.xml",
+        "microsoft.azure.management.trafficmanager.fluent.1.0.0.nupkg.sha512",
+        "microsoft.azure.management.trafficmanager.fluent.nuspec"
+      ]
+    },
+    "Microsoft.IdentityModel.Clients.ActiveDirectory/3.13.9": {
+      "sha512": "tITcWuFUdwskaJVb4fhgV4UjJiAVBli5D5Bnrg3iAJPiRsmFEgv2O5l07WnIj97gRkX8A4d64kgOg+IiOcJVmw==",
+      "type": "package",
+      "path": "microsoft.identitymodel.clients.activedirectory/3.13.9",
+      "files": [
+        "lib/MonoAndroid10/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.XML",
+        "lib/MonoAndroid10/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll",
+        "lib/MonoAndroid10/Microsoft.IdentityModel.Clients.ActiveDirectory.XML",
+        "lib/MonoAndroid10/Microsoft.IdentityModel.Clients.ActiveDirectory.dll",
+        "lib/Xamarin.iOS10/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.XML",
+        "lib/Xamarin.iOS10/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll",
+        "lib/Xamarin.iOS10/Microsoft.IdentityModel.Clients.ActiveDirectory.XML",
+        "lib/Xamarin.iOS10/Microsoft.IdentityModel.Clients.ActiveDirectory.dll",
+        "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.XML",
+        "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll",
+        "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.XML",
+        "lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll",
+        "lib/netcore45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.XML",
+        "lib/netcore45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll",
+        "lib/netcore45/Microsoft.IdentityModel.Clients.ActiveDirectory.XML",
+        "lib/netcore45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.XML",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Clients.ActiveDirectory.XML",
+        "lib/netstandard1.4/Microsoft.IdentityModel.Clients.ActiveDirectory.dll",
+        "lib/portable-net45+win/Microsoft.IdentityModel.Clients.ActiveDirectory.XML",
+        "lib/portable-net45+win/Microsoft.IdentityModel.Clients.ActiveDirectory.dll",
+        "microsoft.identitymodel.clients.activedirectory.3.13.9.nupkg.sha512",
+        "microsoft.identitymodel.clients.activedirectory.nuspec"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime/2.3.5": {
+      "sha512": "0mB7pp9HfggsP/weEB4/KtKrxXh3RJGp2aTzS+ON/tkLXQiZTeeq6gCPiChMWHZrVtnTfQcj6heonEFCACH+6Q==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime/2.3.5",
+      "files": [
+        "lib/net45/Microsoft.Rest.ClientRuntime.dll",
+        "lib/netstandard1.1/Microsoft.Rest.ClientRuntime.dll",
+        "lib/netstandard1.5/Microsoft.Rest.ClientRuntime.dll",
+        "microsoft.rest.clientruntime.2.3.5.nupkg.sha512",
+        "microsoft.rest.clientruntime.nuspec"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime.Azure/3.3.5": {
+      "sha512": "49TdXfX0BQDiWefcogJfTCsGTzsWRz3BPqbUNhbmQE/D9vlf/OdP0hwxMuPavmGEx9SfI9r67nMy9H0VB6ytQA==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime.azure/3.3.5",
+      "files": [
+        "lib/net45/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "lib/netstandard1.1/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "lib/netstandard1.5/Microsoft.Rest.ClientRuntime.Azure.dll",
+        "microsoft.rest.clientruntime.azure.3.3.5.nupkg.sha512",
+        "microsoft.rest.clientruntime.azure.nuspec"
+      ]
+    },
+    "Microsoft.Rest.ClientRuntime.Azure.Authentication/2.2.12": {
+      "sha512": "i/8EZOZO8Etl5M61gFtWTYOnEXqkopioMNzEaTWIFAHgDj9Z4mWPrXWvQYb6ia2GVJkWZlFmqwNLKaFS/6oWCg==",
+      "type": "package",
+      "path": "microsoft.rest.clientruntime.azure.authentication/2.2.12",
+      "files": [
+        "lib/net45/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll",
+        "lib/netstandard1.1/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll",
+        "lib/netstandard1.5/Microsoft.Rest.ClientRuntime.Azure.Authentication.dll",
+        "microsoft.rest.clientruntime.azure.authentication.2.2.12.nupkg.sha512",
+        "microsoft.rest.clientruntime.azure.authentication.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/9.0.1": {
+      "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
+      "type": "package",
+      "path": "newtonsoft.json/9.0.1",
+      "files": [
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+wp80+win8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.9.0.1.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "tools/install.ps1"
+      ]
+    },
+    "System.Net.Http/4.3.1": {
+      "sha512": "UrTyRczM3ZvNk6oetBuwlu67MFKKRva+r7bw4JDVZ6Y2IukyZ24td5ppsieu/4yZlogVAIuZul9GIQ3hoiz0yA==",
+      "type": "package",
+      "path": "system.net.http/4.3.1",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/Xamarinmac20/_._",
+        "lib/monoandroid10/_._",
+        "lib/monotouch10/_._",
+        "lib/net45/_._",
+        "lib/net46/System.Net.Http.dll",
+        "lib/portable-net45+win8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/Xamarinmac20/_._",
+        "ref/monoandroid10/_._",
+        "ref/monotouch10/_._",
+        "ref/net45/_._",
+        "ref/net46/System.Net.Http.dll",
+        "ref/net46/System.Net.Http.xml",
+        "ref/net46/de/System.Net.Http.xml",
+        "ref/net46/es/System.Net.Http.xml",
+        "ref/net46/fr/System.Net.Http.xml",
+        "ref/net46/it/System.Net.Http.xml",
+        "ref/net46/ja/System.Net.Http.xml",
+        "ref/net46/ko/System.Net.Http.xml",
+        "ref/net46/ru/System.Net.Http.xml",
+        "ref/net46/zh-hans/System.Net.Http.xml",
+        "ref/net46/zh-hant/System.Net.Http.xml",
+        "ref/netcore50/System.Net.Http.dll",
+        "ref/netcore50/System.Net.Http.xml",
+        "ref/netcore50/de/System.Net.Http.xml",
+        "ref/netcore50/es/System.Net.Http.xml",
+        "ref/netcore50/fr/System.Net.Http.xml",
+        "ref/netcore50/it/System.Net.Http.xml",
+        "ref/netcore50/ja/System.Net.Http.xml",
+        "ref/netcore50/ko/System.Net.Http.xml",
+        "ref/netcore50/ru/System.Net.Http.xml",
+        "ref/netcore50/zh-hans/System.Net.Http.xml",
+        "ref/netcore50/zh-hant/System.Net.Http.xml",
+        "ref/netstandard1.1/System.Net.Http.dll",
+        "ref/netstandard1.1/System.Net.Http.xml",
+        "ref/netstandard1.1/de/System.Net.Http.xml",
+        "ref/netstandard1.1/es/System.Net.Http.xml",
+        "ref/netstandard1.1/fr/System.Net.Http.xml",
+        "ref/netstandard1.1/it/System.Net.Http.xml",
+        "ref/netstandard1.1/ja/System.Net.Http.xml",
+        "ref/netstandard1.1/ko/System.Net.Http.xml",
+        "ref/netstandard1.1/ru/System.Net.Http.xml",
+        "ref/netstandard1.1/zh-hans/System.Net.Http.xml",
+        "ref/netstandard1.1/zh-hant/System.Net.Http.xml",
+        "ref/netstandard1.3/System.Net.Http.dll",
+        "ref/netstandard1.3/System.Net.Http.xml",
+        "ref/netstandard1.3/de/System.Net.Http.xml",
+        "ref/netstandard1.3/es/System.Net.Http.xml",
+        "ref/netstandard1.3/fr/System.Net.Http.xml",
+        "ref/netstandard1.3/it/System.Net.Http.xml",
+        "ref/netstandard1.3/ja/System.Net.Http.xml",
+        "ref/netstandard1.3/ko/System.Net.Http.xml",
+        "ref/netstandard1.3/ru/System.Net.Http.xml",
+        "ref/netstandard1.3/zh-hans/System.Net.Http.xml",
+        "ref/netstandard1.3/zh-hant/System.Net.Http.xml",
+        "ref/portable-net45+win8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
+        "runtimes/win/lib/net46/System.Net.Http.dll",
+        "runtimes/win/lib/netcore50/System.Net.Http.dll",
+        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
+        "system.net.http.4.3.1.nupkg.sha512",
+        "system.net.http.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Algorithms/4.3.0": {
+      "sha512": "W1kd2Y8mYSCgc3ULTAZ0hOP2dSdG5YauTb1089T0/kRcN2MpSAW1izOFROrJgxSlMn3ArsgHXagigyi+ibhevg==",
+      "type": "package",
+      "path": "system.security.cryptography.algorithms/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.Algorithms.dll",
+        "lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "lib/net463/System.Security.Cryptography.Algorithms.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.Algorithms.dll",
+        "ref/net461/System.Security.Cryptography.Algorithms.dll",
+        "ref/net463/System.Security.Cryptography.Algorithms.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Algorithms.dll",
+        "ref/netstandard1.4/System.Security.Cryptography.Algorithms.dll",
+        "ref/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/osx/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/net46/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/net463/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/netcore50/System.Security.Cryptography.Algorithms.dll",
+        "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Algorithms.dll",
+        "system.security.cryptography.algorithms.4.3.0.nupkg.sha512",
+        "system.security.cryptography.algorithms.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Encoding/4.3.0": {
+      "sha512": "1DEWjZZly9ae9C79vFwqaO5kaOlI5q+3/55ohmq/7dpDyDfc8lYe7YVxJUZ5MF/NtbkRjwFRo14yM4OEo9EmDw==",
+      "type": "package",
+      "path": "system.security.cryptography.encoding/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.Encoding.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.Encoding.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/de/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/es/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/fr/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/it/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/ja/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/ko/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/ru/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Cryptography.Encoding.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Cryptography.Encoding.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+        "runtimes/win/lib/net46/System.Security.Cryptography.Encoding.dll",
+        "runtimes/win/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll",
+        "system.security.cryptography.encoding.4.3.0.nupkg.sha512",
+        "system.security.cryptography.encoding.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.Primitives/4.3.0": {
+      "sha512": "7bDIyVFNL/xKeFHjhobUAQqSpJq9YTOpbEs6mR233Et01STBMXNAc/V+BM6dwYGc95gVh/Zf+iVXWzj3mE8DWg==",
+      "type": "package",
+      "path": "system.security.cryptography.primitives/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.Primitives.dll",
+        "lib/netstandard1.3/System.Security.Cryptography.Primitives.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.Primitives.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.Primitives.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.security.cryptography.primitives.4.3.0.nupkg.sha512",
+        "system.security.cryptography.primitives.nuspec"
+      ]
+    },
+    "System.Security.Cryptography.X509Certificates/4.3.0": {
+      "sha512": "t2Tmu6Y2NtJ2um0RtcuhP7ZdNNxXEgUm2JeoA/0NvlMjAhKCnM1NX07TDl3244mVp3QU6LPEhT3HTtH1uF7IYw==",
+      "type": "package",
+      "path": "system.security.cryptography.x509certificates/4.3.0",
+      "files": [
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Security.Cryptography.X509Certificates.dll",
+        "lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Security.Cryptography.X509Certificates.dll",
+        "ref/net461/System.Security.Cryptography.X509Certificates.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.X509Certificates.dll",
+        "ref/netstandard1.3/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/de/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/es/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/fr/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/it/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/ja/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/ko/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/ru/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/zh-hans/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.3/zh-hant/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.dll",
+        "ref/netstandard1.4/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/de/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/es/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/fr/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/it/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/ja/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/ko/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/ru/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/zh-hans/System.Security.Cryptography.X509Certificates.xml",
+        "ref/netstandard1.4/zh-hant/System.Security.Cryptography.X509Certificates.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/net46/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/net461/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/netcore50/System.Security.Cryptography.X509Certificates.dll",
+        "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.X509Certificates.dll",
+        "system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
+        "system.security.cryptography.x509certificates.nuspec"
+      ]
+    },
+    "CloudPrototyper.Azure/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Azure/CloudPrototyper.Azure.csproj",
+      "msbuildProject": "../CloudPrototyper.Azure/CloudPrototyper.Azure.csproj"
+    },
+    "CloudPrototyper.Benchmark/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Benchmark/CloudPrototyper.Benchmark.csproj",
+      "msbuildProject": "../CloudPrototyper.Benchmark/CloudPrototyper.Benchmark.csproj"
+    },
+    "CloudPrototyper.Build.NET/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Build.NET/CloudPrototyper.Build.NET.csproj",
+      "msbuildProject": "../CloudPrototyper.Build.NET/CloudPrototyper.Build.NET.csproj"
+    },
+    "CloudPrototyper.ConfigProvider/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.ConfigProvider/CloudPrototyper.ConfigProvider.csproj",
+      "msbuildProject": "../CloudPrototyper.ConfigProvider/CloudPrototyper.ConfigProvider.csproj"
+    },
+    "CloudPrototyper.DataGenerator/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.DataGenerator/CloudPrototyper.DataGenerator.csproj",
+      "msbuildProject": "../CloudPrototyper.DataGenerator/CloudPrototyper.DataGenerator.csproj"
+    },
+    "CloudPrototyper.Deployment.Azure/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Deployment.Azure/CloudPrototyper.Deployment.Azure.csproj",
+      "msbuildProject": "../CloudPrototyper.Deployment.Azure/CloudPrototyper.Deployment.Azure.csproj"
+    },
+    "CloudPrototyper.Examples/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Examples/CloudPrototyper.Examples.csproj",
+      "msbuildProject": "../CloudPrototyper.Examples/CloudPrototyper.Examples.csproj"
+    },
+    "CloudPrototyper.Generator/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Generator/CloudPrototyper.Generator.csproj",
+      "msbuildProject": "../CloudPrototyper.Generator/CloudPrototyper.Generator.csproj"
+    },
+    "CloudPrototyper.Interface/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Interface/CloudPrototyper.Interface.csproj",
+      "msbuildProject": "../CloudPrototyper.Interface/CloudPrototyper.Interface.csproj"
+    },
+    "CloudPrototyper.Model/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.Model/CloudPrototyper.Model.csproj",
+      "msbuildProject": "../CloudPrototyper.Model/CloudPrototyper.Model.csproj"
+    },
+    "CloudPrototyper.ModelResolver/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.ModelResolver/CloudPrototyper.ModelResolver.csproj",
+      "msbuildProject": "../CloudPrototyper.ModelResolver/CloudPrototyper.ModelResolver.csproj"
+    },
+    "CloudPrototyper.NET.Framework.v462.Common/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Framework.v462.Common/CloudPrototyper.NET.Framework.v462.Common.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Framework.v462.Common/CloudPrototyper.NET.Framework.v462.Common.csproj"
+    },
+    "CloudPrototyper.NET.Framework.v462.Computing/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Framework.v462.Computing/CloudPrototyper.NET.Framework.v462.Computing.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Framework.v462.Computing/CloudPrototyper.NET.Framework.v462.Computing.csproj"
+    },
+    "CloudPrototyper.NET.Framework.v462.DataLayer/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Framework.v462.DataLayer/CloudPrototyper.NET.Framework.v462.DataLayer.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Framework.v462.DataLayer/CloudPrototyper.NET.Framework.v462.DataLayer.csproj"
+    },
+    "CloudPrototyper.NET.Framework.v462.TblStorage/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Framework.v462.TblStorage/CloudPrototyper.NET.Framework.v462.TblStorage.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Framework.v462.TblStorage/CloudPrototyper.NET.Framework.v462.TblStorage.csproj"
+    },
+    "CloudPrototyper.NET.Framework.v462.WebApi/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Framework.v462.WebApi/CloudPrototyper.NET.Framework.v462.WebApi.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Framework.v462.WebApi/CloudPrototyper.NET.Framework.v462.WebApi.csproj"
+    },
+    "CloudPrototyper.NET.Framework.v462.WebJob/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Framework.v462.WebJob/CloudPrototyper.NET.Framework.v462.WebJob.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Framework.v462.WebJob/CloudPrototyper.NET.Framework.v462.WebJob.csproj"
+    },
+    "CloudPrototyper.NET.Interface/1.0.0": {
+      "type": "project",
+      "path": "../CloudPrototyper.NET.Interface/CloudPrototyper.NET.Interface.csproj",
+      "msbuildProject": "../CloudPrototyper.NET.Interface/CloudPrototyper.NET.Interface.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.6.2": [
+      "CloudPrototyper.Azure >= 1.0.0",
+      "CloudPrototyper.Benchmark >= 1.0.0",
+      "CloudPrototyper.Build.NET >= 1.0.0",
+      "CloudPrototyper.ConfigProvider >= 1.0.0",
+      "CloudPrototyper.DataGenerator >= 1.0.0",
+      "CloudPrototyper.Deployment.Azure >= 1.0.0",
+      "CloudPrototyper.Examples >= 1.0.0",
+      "CloudPrototyper.Generator >= 1.0.0",
+      "CloudPrototyper.Interface >= 1.0.0",
+      "CloudPrototyper.Model >= 1.0.0",
+      "CloudPrototyper.ModelResolver >= 1.0.0",
+      "CloudPrototyper.NET.Framework.v462.Common >= 1.0.0",
+      "CloudPrototyper.NET.Framework.v462.Computing >= 1.0.0",
+      "CloudPrototyper.NET.Framework.v462.DataLayer >= 1.0.0",
+      "CloudPrototyper.NET.Framework.v462.TblStorage >= 1.0.0",
+      "CloudPrototyper.NET.Framework.v462.WebApi >= 1.0.0",
+      "CloudPrototyper.NET.Framework.v462.WebJob >= 1.0.0",
+      "CloudPrototyper.NET.Interface >= 1.0.0",
+      "Microsoft.Azure.Management.Fluent >= 1.0.0",
+      "Microsoft.Azure.Management.ResourceManager.Fluent >= 1.0.0",
+      "Microsoft.IdentityModel.Clients.ActiveDirectory >= 3.13.9",
+      "Newtonsoft.Json >= 9.0.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ogasi_000\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Console\\CloudPrototyper.Console.csproj",
+      "projectName": "CloudPrototyper.Console",
+      "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Console\\CloudPrototyper.Console.csproj",
+      "outputPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Console\\obj\\",
+      "projectStyle": "PackageReference",
+      "originalTargetFrameworks": [
+        "net462"
+      ],
+      "frameworks": {
+        "net462": {
+          "projectReferences": {
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.TblStorage\\CloudPrototyper.NET.Framework.v462.TblStorage.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.TblStorage\\CloudPrototyper.NET.Framework.v462.TblStorage.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Model\\CloudPrototyper.Model.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Model\\CloudPrototyper.Model.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.Common\\CloudPrototyper.NET.Framework.v462.Common.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.Common\\CloudPrototyper.NET.Framework.v462.Common.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.WebJob\\CloudPrototyper.NET.Framework.v462.WebJob.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.WebJob\\CloudPrototyper.NET.Framework.v462.WebJob.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Deployment.Azure\\CloudPrototyper.Deployment.Azure.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Deployment.Azure\\CloudPrototyper.Deployment.Azure.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.WebApi\\CloudPrototyper.NET.Framework.v462.WebApi.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.WebApi\\CloudPrototyper.NET.Framework.v462.WebApi.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Azure\\CloudPrototyper.Azure.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Azure\\CloudPrototyper.Azure.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Examples\\CloudPrototyper.Examples.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Examples\\CloudPrototyper.Examples.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.DataGenerator\\CloudPrototyper.DataGenerator.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.DataGenerator\\CloudPrototyper.DataGenerator.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Interface\\CloudPrototyper.Interface.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Interface\\CloudPrototyper.Interface.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.Computing\\CloudPrototyper.NET.Framework.v462.Computing.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.Computing\\CloudPrototyper.NET.Framework.v462.Computing.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Generator\\CloudPrototyper.Generator.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Generator\\CloudPrototyper.Generator.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.ConfigProvider\\CloudPrototyper.ConfigProvider.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.ConfigProvider\\CloudPrototyper.ConfigProvider.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Benchmark\\CloudPrototyper.Benchmark.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Benchmark\\CloudPrototyper.Benchmark.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Interface\\CloudPrototyper.NET.Interface.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Interface\\CloudPrototyper.NET.Interface.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.DataLayer\\CloudPrototyper.NET.Framework.v462.DataLayer.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.NET.Framework.v462.DataLayer\\CloudPrototyper.NET.Framework.v462.DataLayer.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.ModelResolver\\CloudPrototyper.ModelResolver.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.ModelResolver\\CloudPrototyper.ModelResolver.csproj"
+            },
+            "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Build.NET\\CloudPrototyper.Build.NET.csproj": {
+              "projectPath": "C:\\Users\\ogasi_000\\Documents\\Visual Studio 2015\\Projects\\Prototyper\\CloudPrototyper\\CloudPrototyper.Build.NET\\CloudPrototyper.Build.NET.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net462": {
+        "dependencies": {
+          "Microsoft.Azure.Management.Fluent": {
+            "target": "Package",
+            "version": "1.0.0"
+          },
+          "Microsoft.Azure.Management.ResourceManager.Fluent": {
+            "target": "Package",
+            "version": "1.0.0"
+          },
+          "Microsoft.IdentityModel.Clients.ActiveDirectory": {
+            "target": "Package",
+            "version": "3.13.9"
+          },
+          "Newtonsoft.Json": {
+            "target": "Package",
+            "version": "9.0.1"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
+      }
+    }
+  }
+}

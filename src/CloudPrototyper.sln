@@ -1,0 +1,289 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{1BD51535-F009-4041-8A1C-6C68C6138699}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Executable", "Executable", "{CA239E96-33FF-4ADD-9191-ACA1FA3B8C8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{9C7D4B40-6698-45A7-ABC9-07D76FDF6305}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{AC09480B-CEB5-4FF3-BA1D-3EE34B568455}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Implementations", "Implementations", "{2B5B8B9C-5CEE-4907-B301-55223C3B8639}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET", ".NET", "{FC09858D-7848-4BF3-98BF-00ECE8A2639C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{44FF27C9-9214-4F84-8973-B9EF427B105A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v462", "v462", "{7BA16ACF-FB11-42E6-8CCB-233F63497780}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{5E2E7E6B-D702-4700-8049-E753FC6D6CE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extensions", "Extensions", "{573096FC-164D-428A-B77C-6D235810E681}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".NET", ".NET", "{F3FF8C36-06DA-4F65-A5DD-B2F67C58FD70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{CFAE37D2-B2F3-4C36-87E9-69CA85CD36D2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "v462", "v462", "{630BC060-BA11-4234-B345-79E0CBAA8D75}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{7B685CFC-2781-48BE-9D84-47DD18A50497}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{90AF30F2-D935-4109-B6A5-52CC71B9FA14}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataGeneration", "DataGeneration", "{BFDE7B21-BF71-40C0-ACF6-2ADAC9DEA280}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Generator", "CloudPrototyper.Generator\CloudPrototyper.Generator.csproj", "{BAA9057C-CC4D-48F5-A124-85773AFDE952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Model", "CloudPrototyper.Model\CloudPrototyper.Model.csproj", "{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Framework.v462.WebApi", "CloudPrototyper.NET.Framework.v462.WebApi\CloudPrototyper.NET.Framework.v462.WebApi.csproj", "{CF5386EA-4070-4AC6-8A87-A77526021B92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Framework.v462.WebJob", "CloudPrototyper.NET.Framework.v462.WebJob\CloudPrototyper.NET.Framework.v462.WebJob.csproj", "{C832664D-EDC3-4100-B40D-0C065687C2A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Framework.v462.Common", "CloudPrototyper.NET.Framework.v462.Common\CloudPrototyper.NET.Framework.v462.Common.csproj", "{95724B89-38DD-47B3-A309-0FB5152C94A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Benchmark", "CloudPrototyper.Benchmark\CloudPrototyper.Benchmark.csproj", "{4D27B9E9-503F-484A-866E-36521687C215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Examples", "CloudPrototyper.Examples\CloudPrototyper.Examples.csproj", "{905C4537-3504-45F5-9997-8D0D8D50F7FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Interface", "CloudPrototyper.NET.Interface\CloudPrototyper.NET.Interface.csproj", "{1233F9D6-548B-4C1E-B8D1-3B24B2DE775A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Azure", "CloudPrototyper.Azure\CloudPrototyper.Azure.csproj", "{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Interface", "CloudPrototyper.Interface\CloudPrototyper.Interface.csproj", "{723260E4-7ECA-4C4C-8102-3C461161ECE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Framework.v462.Computing", "CloudPrototyper.NET.Framework.v462.Computing\CloudPrototyper.NET.Framework.v462.Computing.csproj", "{51DCD0E3-15EC-49E0-8DC8-2F936F13843C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudPrototyper.Deployment.Azure", "CloudPrototyper.Deployment.Azure\CloudPrototyper.Deployment.Azure.csproj", "{C8721043-6901-4D61-B528-D00A0A13392A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudPrototyper.ModelResolver", "CloudPrototyper.ModelResolver\CloudPrototyper.ModelResolver.csproj", "{D6559EE7-8030-4802-B691-8AE0C6E0BBB3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudPrototyper.Console", "CloudPrototyper.Console\CloudPrototyper.Console.csproj", "{5715BE85-9BD6-4EC5-9B71-E0ED472C28F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CloudPrototyper.ConfigProvider", "CloudPrototyper.ConfigProvider\CloudPrototyper.ConfigProvider.csproj", "{BE69BA78-19B9-4BA7-A3DB-4A54FA9DA0DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.Build.NET", "CloudPrototyper.Build.NET\CloudPrototyper.Build.NET.csproj", "{69984CC0-5DDE-4893-9804-0F5F0F6D2ED9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.DataGenerator", "CloudPrototyper.DataGenerator\CloudPrototyper.DataGenerator.csproj", "{959F929D-BA7A-40D4-B5C4-682F2E838390}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmark", "Benchmark", "{18EBD87A-E501-43AB-B23A-65B5E154CE8C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generator", "Generator", "{EFB29744-3553-477F-A410-57FD5004F82F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interface", "Interface", "{D7FA86C9-6B15-4F06-B1B2-73E73BAC009B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{C988D008-2CAA-4726-84EE-A26AD8B9A8A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Framework.v462.DataLayer", "CloudPrototyper.NET.Framework.v462.DataLayer\CloudPrototyper.NET.Framework.v462.DataLayer.csproj", "{66E15BC2-6364-4B14-8311-36254683B157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudPrototyper.NET.Framework.v462.TblStorage", "CloudPrototyper.NET.Framework.v462.TblStorage\CloudPrototyper.NET.Framework.v462.TblStorage.csproj", "{DE9B40C4-F233-4EE8-A849-F4AD95C0ECB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BAA9057C-CC4D-48F5-A124-85773AFDE952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAA9057C-CC4D-48F5-A124-85773AFDE952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAA9057C-CC4D-48F5-A124-85773AFDE952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAA9057C-CC4D-48F5-A124-85773AFDE952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5386EA-4070-4AC6-8A87-A77526021B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5386EA-4070-4AC6-8A87-A77526021B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5386EA-4070-4AC6-8A87-A77526021B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5386EA-4070-4AC6-8A87-A77526021B92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C832664D-EDC3-4100-B40D-0C065687C2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C832664D-EDC3-4100-B40D-0C065687C2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C832664D-EDC3-4100-B40D-0C065687C2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C832664D-EDC3-4100-B40D-0C065687C2A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95724B89-38DD-47B3-A309-0FB5152C94A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95724B89-38DD-47B3-A309-0FB5152C94A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95724B89-38DD-47B3-A309-0FB5152C94A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95724B89-38DD-47B3-A309-0FB5152C94A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D27B9E9-503F-484A-866E-36521687C215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D27B9E9-503F-484A-866E-36521687C215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D27B9E9-503F-484A-866E-36521687C215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D27B9E9-503F-484A-866E-36521687C215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905C4537-3504-45F5-9997-8D0D8D50F7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905C4537-3504-45F5-9997-8D0D8D50F7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905C4537-3504-45F5-9997-8D0D8D50F7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905C4537-3504-45F5-9997-8D0D8D50F7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1233F9D6-548B-4C1E-B8D1-3B24B2DE775A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1233F9D6-548B-4C1E-B8D1-3B24B2DE775A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1233F9D6-548B-4C1E-B8D1-3B24B2DE775A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1233F9D6-548B-4C1E-B8D1-3B24B2DE775A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{723260E4-7ECA-4C4C-8102-3C461161ECE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{723260E4-7ECA-4C4C-8102-3C461161ECE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{723260E4-7ECA-4C4C-8102-3C461161ECE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{723260E4-7ECA-4C4C-8102-3C461161ECE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51DCD0E3-15EC-49E0-8DC8-2F936F13843C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DCD0E3-15EC-49E0-8DC8-2F936F13843C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DCD0E3-15EC-49E0-8DC8-2F936F13843C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DCD0E3-15EC-49E0-8DC8-2F936F13843C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8721043-6901-4D61-B528-D00A0A13392A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8721043-6901-4D61-B528-D00A0A13392A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8721043-6901-4D61-B528-D00A0A13392A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8721043-6901-4D61-B528-D00A0A13392A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6559EE7-8030-4802-B691-8AE0C6E0BBB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6559EE7-8030-4802-B691-8AE0C6E0BBB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6559EE7-8030-4802-B691-8AE0C6E0BBB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6559EE7-8030-4802-B691-8AE0C6E0BBB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5715BE85-9BD6-4EC5-9B71-E0ED472C28F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5715BE85-9BD6-4EC5-9B71-E0ED472C28F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5715BE85-9BD6-4EC5-9B71-E0ED472C28F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5715BE85-9BD6-4EC5-9B71-E0ED472C28F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE69BA78-19B9-4BA7-A3DB-4A54FA9DA0DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE69BA78-19B9-4BA7-A3DB-4A54FA9DA0DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE69BA78-19B9-4BA7-A3DB-4A54FA9DA0DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE69BA78-19B9-4BA7-A3DB-4A54FA9DA0DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69984CC0-5DDE-4893-9804-0F5F0F6D2ED9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69984CC0-5DDE-4893-9804-0F5F0F6D2ED9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69984CC0-5DDE-4893-9804-0F5F0F6D2ED9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69984CC0-5DDE-4893-9804-0F5F0F6D2ED9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959F929D-BA7A-40D4-B5C4-682F2E838390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959F929D-BA7A-40D4-B5C4-682F2E838390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959F929D-BA7A-40D4-B5C4-682F2E838390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959F929D-BA7A-40D4-B5C4-682F2E838390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66E15BC2-6364-4B14-8311-36254683B157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E15BC2-6364-4B14-8311-36254683B157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E15BC2-6364-4B14-8311-36254683B157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E15BC2-6364-4B14-8311-36254683B157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9B40C4-F233-4EE8-A849-F4AD95C0ECB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9B40C4-F233-4EE8-A849-F4AD95C0ECB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9B40C4-F233-4EE8-A849-F4AD95C0ECB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9B40C4-F233-4EE8-A849-F4AD95C0ECB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FC09858D-7848-4BF3-98BF-00ECE8A2639C} = {2B5B8B9C-5CEE-4907-B301-55223C3B8639}
+		{44FF27C9-9214-4F84-8973-B9EF427B105A} = {FC09858D-7848-4BF3-98BF-00ECE8A2639C}
+		{7BA16ACF-FB11-42E6-8CCB-233F63497780} = {44FF27C9-9214-4F84-8973-B9EF427B105A}
+		{5E2E7E6B-D702-4700-8049-E753FC6D6CE1} = {7BA16ACF-FB11-42E6-8CCB-233F63497780}
+		{573096FC-164D-428A-B77C-6D235810E681} = {2B5B8B9C-5CEE-4907-B301-55223C3B8639}
+		{F3FF8C36-06DA-4F65-A5DD-B2F67C58FD70} = {573096FC-164D-428A-B77C-6D235810E681}
+		{CFAE37D2-B2F3-4C36-87E9-69CA85CD36D2} = {F3FF8C36-06DA-4F65-A5DD-B2F67C58FD70}
+		{630BC060-BA11-4234-B345-79E0CBAA8D75} = {CFAE37D2-B2F3-4C36-87E9-69CA85CD36D2}
+		{7B685CFC-2781-48BE-9D84-47DD18A50497} = {9C7D4B40-6698-45A7-ABC9-07D76FDF6305}
+		{90AF30F2-D935-4109-B6A5-52CC71B9FA14} = {9C7D4B40-6698-45A7-ABC9-07D76FDF6305}
+		{BFDE7B21-BF71-40C0-ACF6-2ADAC9DEA280} = {9C7D4B40-6698-45A7-ABC9-07D76FDF6305}
+		{BAA9057C-CC4D-48F5-A124-85773AFDE952} = {EFB29744-3553-477F-A410-57FD5004F82F}
+		{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA} = {1BD51535-F009-4041-8A1C-6C68C6138699}
+		{CF5386EA-4070-4AC6-8A87-A77526021B92} = {7BA16ACF-FB11-42E6-8CCB-233F63497780}
+		{C832664D-EDC3-4100-B40D-0C065687C2A0} = {7BA16ACF-FB11-42E6-8CCB-233F63497780}
+		{95724B89-38DD-47B3-A309-0FB5152C94A3} = {5E2E7E6B-D702-4700-8049-E753FC6D6CE1}
+		{4D27B9E9-503F-484A-866E-36521687C215} = {18EBD87A-E501-43AB-B23A-65B5E154CE8C}
+		{905C4537-3504-45F5-9997-8D0D8D50F7FB} = {AC09480B-CEB5-4FF3-BA1D-3EE34B568455}
+		{1233F9D6-548B-4C1E-B8D1-3B24B2DE775A} = {D7FA86C9-6B15-4F06-B1B2-73E73BAC009B}
+		{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3} = {1BD51535-F009-4041-8A1C-6C68C6138699}
+		{723260E4-7ECA-4C4C-8102-3C461161ECE3} = {D7FA86C9-6B15-4F06-B1B2-73E73BAC009B}
+		{51DCD0E3-15EC-49E0-8DC8-2F936F13843C} = {630BC060-BA11-4234-B345-79E0CBAA8D75}
+		{C8721043-6901-4D61-B528-D00A0A13392A} = {7B685CFC-2781-48BE-9D84-47DD18A50497}
+		{D6559EE7-8030-4802-B691-8AE0C6E0BBB3} = {CA239E96-33FF-4ADD-9191-ACA1FA3B8C8B}
+		{5715BE85-9BD6-4EC5-9B71-E0ED472C28F5} = {CA239E96-33FF-4ADD-9191-ACA1FA3B8C8B}
+		{BE69BA78-19B9-4BA7-A3DB-4A54FA9DA0DC} = {C988D008-2CAA-4726-84EE-A26AD8B9A8A5}
+		{69984CC0-5DDE-4893-9804-0F5F0F6D2ED9} = {90AF30F2-D935-4109-B6A5-52CC71B9FA14}
+		{959F929D-BA7A-40D4-B5C4-682F2E838390} = {BFDE7B21-BF71-40C0-ACF6-2ADAC9DEA280}
+		{18EBD87A-E501-43AB-B23A-65B5E154CE8C} = {9C7D4B40-6698-45A7-ABC9-07D76FDF6305}
+		{EFB29744-3553-477F-A410-57FD5004F82F} = {9C7D4B40-6698-45A7-ABC9-07D76FDF6305}
+		{C988D008-2CAA-4726-84EE-A26AD8B9A8A5} = {9C7D4B40-6698-45A7-ABC9-07D76FDF6305}
+		{66E15BC2-6364-4B14-8311-36254683B157} = {7BA16ACF-FB11-42E6-8CCB-233F63497780}
+		{DE9B40C4-F233-4EE8-A849-F4AD95C0ECB8} = {630BC060-BA11-4234-B345-79E0CBAA8D75}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.TransientFaultHandling.6.0.1304.0\lib\portable-net45+win+wp8;packages\EnterpriseLibrary.TransientFaultHandling.Data.6.0.1304.1\lib\NET45
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 20
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://prototyper-projects.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CloudPrototyper.Generator\\CloudPrototyper.Generator.csproj
+		SccProjectTopLevelParentUniqueName1 = CloudPrototyper.sln
+		SccProjectName1 = CloudPrototyper.Generator
+		SccLocalPath1 = CloudPrototyper.Generator
+		SccProjectUniqueName2 = CloudPrototyper.Model\\CloudPrototyper.Model.csproj
+		SccProjectTopLevelParentUniqueName2 = CloudPrototyper.sln
+		SccProjectName2 = CloudPrototyper.Model
+		SccLocalPath2 = CloudPrototyper.Model
+		SccProjectUniqueName3 = CloudPrototyper.NET.Framework.v462.WebApi\\CloudPrototyper.NET.Framework.v462.WebApi.csproj
+		SccProjectTopLevelParentUniqueName3 = CloudPrototyper.sln
+		SccProjectName3 = CloudPrototyper.NET.Framework.v462.WebApi
+		SccLocalPath3 = CloudPrototyper.NET.Framework.v462.WebApi
+		SccProjectUniqueName4 = CloudPrototyper.NET.Framework.v462.WebJob\\CloudPrototyper.NET.Framework.v462.WebJob.csproj
+		SccProjectTopLevelParentUniqueName4 = CloudPrototyper.sln
+		SccProjectName4 = CloudPrototyper.NET.Framework.v462.WebJob
+		SccLocalPath4 = CloudPrototyper.NET.Framework.v462.WebJob
+		SccProjectUniqueName5 = CloudPrototyper.NET.Framework.v462.Common\\CloudPrototyper.NET.Framework.v462.Common.csproj
+		SccProjectTopLevelParentUniqueName5 = CloudPrototyper.sln
+		SccProjectName5 = CloudPrototyper.NET.Framework.v462.Common
+		SccLocalPath5 = CloudPrototyper.NET.Framework.v462.Common
+		SccProjectUniqueName6 = CloudPrototyper.Benchmark\\CloudPrototyper.Benchmark.csproj
+		SccProjectTopLevelParentUniqueName6 = CloudPrototyper.sln
+		SccProjectName6 = CloudPrototyper.Benchmark
+		SccLocalPath6 = CloudPrototyper.Benchmark
+		SccProjectUniqueName7 = CloudPrototyper.Examples\\CloudPrototyper.Examples.csproj
+		SccProjectTopLevelParentUniqueName7 = CloudPrototyper.sln
+		SccProjectName7 = CloudPrototyper.Examples
+		SccLocalPath7 = CloudPrototyper.Examples
+		SccProjectUniqueName8 = CloudPrototyper.Interface\\CloudPrototyper.Interface.csproj
+		SccProjectTopLevelParentUniqueName8 = CloudPrototyper.sln
+		SccProjectName8 = CloudPrototyper.Interface
+		SccLocalPath8 = CloudPrototyper.Interface
+		SccProjectUniqueName9 = CloudPrototyper.Azure\\CloudPrototyper.Azure.csproj
+		SccProjectTopLevelParentUniqueName9 = CloudPrototyper.sln
+		SccProjectName9 = CloudPrototyper.Azure
+		SccLocalPath9 = CloudPrototyper.Azure
+		SccProjectUniqueName10 = CloudPrototyper.NET.Interface\\CloudPrototyper.NET.Interface.csproj
+		SccProjectTopLevelParentUniqueName10 = CloudPrototyper.sln
+		SccProjectName10 = CloudPrototyper.NET.Interface
+		SccLocalPath10 = CloudPrototyper.NET.Interface
+		SccProjectUniqueName11 = CloudPrototyper.NET.Framework.v462.Computing\\CloudPrototyper.NET.Framework.v462.Computing.csproj
+		SccProjectTopLevelParentUniqueName11 = CloudPrototyper.sln
+		SccProjectName11 = CloudPrototyper.NET.Framework.v462.Computing
+		SccLocalPath11 = CloudPrototyper.NET.Framework.v462.Computing
+		SccProjectUniqueName12 = CloudPrototyper.Build.NET\\CloudPrototyper.Build.NET.csproj
+		SccProjectTopLevelParentUniqueName12 = CloudPrototyper.sln
+		SccProjectName12 = CloudPrototyper.Build.NET
+		SccLocalPath12 = CloudPrototyper.Build.NET
+		SccProjectUniqueName13 = CloudPrototyper.DataGenerator\\CloudPrototyper.DataGenerator.csproj
+		SccProjectTopLevelParentUniqueName13 = CloudPrototyper.sln
+		SccProjectName13 = CloudPrototyper.DataGenerator
+		SccLocalPath13 = CloudPrototyper.DataGenerator
+		SccProjectUniqueName14 = CloudPrototyper.Deployment.Azure\\CloudPrototyper.Deployment.Azure.csproj
+		SccProjectTopLevelParentUniqueName14 = CloudPrototyper.sln
+		SccProjectName14 = CloudPrototyper.Deployment.Azure
+		SccLocalPath14 = CloudPrototyper.Deployment.Azure
+		SccProjectUniqueName15 = CloudPrototyper.ModelResolver\\CloudPrototyper.ModelResolver.csproj
+		SccProjectTopLevelParentUniqueName15 = CloudPrototyper.sln
+		SccProjectName15 = CloudPrototyper.ModelResolver
+		SccLocalPath15 = CloudPrototyper.ModelResolver
+		SccProjectUniqueName16 = CloudPrototyper.Console\\CloudPrototyper.Console.csproj
+		SccProjectTopLevelParentUniqueName16 = CloudPrototyper.sln
+		SccProjectName16 = CloudPrototyper.Console
+		SccLocalPath16 = CloudPrototyper.Console
+		SccProjectUniqueName17 = CloudPrototyper.ConfigProvider\\CloudPrototyper.ConfigProvider.csproj
+		SccProjectTopLevelParentUniqueName17 = CloudPrototyper.sln
+		SccProjectName17 = CloudPrototyper.ConfigProvider
+		SccLocalPath17 = CloudPrototyper.ConfigProvider
+		SccProjectUniqueName18 = CloudPrototyper.NET.Framework.v462.DataLayer\\CloudPrototyper.NET.Framework.v462.DataLayer.csproj
+		SccProjectTopLevelParentUniqueName18 = CloudPrototyper.sln
+		SccProjectName18 = CloudPrototyper.NET.Framework.v462.DataLayer
+		SccLocalPath18 = CloudPrototyper.NET.Framework.v462.DataLayer
+		SccProjectUniqueName19 = CloudPrototyper.NET.Framework.v462.TblStorage\\CloudPrototyper.NET.Framework.v462.TblStorage.csproj
+		SccProjectTopLevelParentUniqueName19 = CloudPrototyper.sln
+		SccProjectName19 = CloudPrototyper.NET.Framework.v462.TblStorage
+		SccLocalPath19 = CloudPrototyper.NET.Framework.v462.TblStorage
+	EndGlobalSection
+EndGlobal

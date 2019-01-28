@@ -1,0 +1,69 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.DataLayerGenerators.AzureMessageQueue.AzureServiceBusQueueGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Microsoft.ServiceBus.Messaging;
+// Azure service bus
+namespace <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.MessageBusInterfaceGenerator.Namespace #>.<#= Model.MessageBusInterfaceGenerator.Name #>
+    {
+		private readonly Dictionary<string, Type> _names = new Dictionary<string, Type>();
+		private readonly QueueClient _client; 
+		public const string Name = "<#= Model.ModelParameters.Name #>";
+
+		public <#= Model.Name #>() 
+		{ 
+			_client = QueueClient.CreateFromConnectionString("<#= Model.ModelParameters.ConnectionString #>");
+		}
+
+		public void Insert(string name) 
+		{
+			object toInsert = null;
+<# foreach(var entity in Model.Entities) { #>
+			if(name == "<#= entity.Name #>")
+			{
+				toInsert = <#=Model.DataGenerator.Namespace#>.<#= Model.DataGenerator.Name #>.GetInstance().Generate<<#=entity.Namespace#>.<#= entity.Name #>>(1).ToArray()[0];
+			} 
+<# } #>
+			Insert(name,toInsert);
+		}
+
+		public void Insert(string name, object toInsert) 
+		{
+			using (var jsonStream = new MemoryStream())
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                using (StreamWriter sw = new StreamWriter(jsonStream))
+                {
+                    using (JsonTextWriter writer = new JsonTextWriter(sw))
+                    {
+                        serializer.Serialize(writer, name);
+                        sw.Flush();
+                        jsonStream.Seek(0, SeekOrigin.Begin);
+
+                        var message = new BrokeredMessage(jsonStream, true) { Label = name };
+
+                        _client.Send(message);
+                    }
+                }
+            }
+		}
+
+		public void InsertAll(string name, object[] toInsert) 
+		{
+			foreach(var o in toInsert) 
+			{
+				Insert(name, o);
+				
+			}
+		}
+    }
+}

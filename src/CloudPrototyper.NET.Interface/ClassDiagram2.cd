@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CloudPrototyper.NET.Interface.Generation.AssemblyBase" Collapsed="true">
+    <Position X="10.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAIA=</HashCode>
+      <FileName>Generation\AssemblyBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.CodeGeneratorBase" Collapsed="true">
+    <Position X="13.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAQAAAAAIAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Generation\CodeGeneratorBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.252" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.Generation.ApplicationGenerator&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABAAIA=</HashCode>
+      <FileName>Generation\Generation\ApplicationGenerator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Contents" />
+      <Property Name="Files" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.231" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.Generation.GeneratorBase" Collapsed="true">
+    <Position X="10.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generation\Generation\GeneratorBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.Generation.GeneratorManager" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAIIAgAAAIAAAAAAAACAAAAABAAAA=</HashCode>
+      <FileName>Generation\Generation\GeneratorManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.Generation.GeneratorManager&lt;T&gt;" Collapsed="true">
+    <Position X="11.25" Y="3.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+    </Compartments>
+    <InheritanceLine Type="CloudPrototyper.NET.Interface.Generation.Generation.GeneratorManager" ManuallyRouted="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.75" Y="2.312" />
+        <Point X="10.75" Y="4" />
+        <Point X="11.25" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="ApplicationGenerator" Type="CloudPrototyper.NET.Interface.Generation.Generation.ApplicationGenerator&lt;T&gt;">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.123" Y="0.622" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIQAAAAAAAAA=</HashCode>
+      <FileName>Generation\Generation\GeneratorManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ApplicationGenerator" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.Generation.Informations.ContentInfo" Collapsed="true">
+    <Position X="16.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generation\Generation\Informations\ContentInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Prototyper.Modelable" Collapsed="true">
+    <Position X="16" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Prototyper\Modeled.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Prototyper.Modeled&lt;T&gt;" Collapsed="true">
+    <Position X="16" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Prototyper\Modeled.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CloudPrototyper.NET.Interface.Generation.Generation.IGenerableFile" Collapsed="true">
+    <Position X="14.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generation\Generation\IGenerableFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

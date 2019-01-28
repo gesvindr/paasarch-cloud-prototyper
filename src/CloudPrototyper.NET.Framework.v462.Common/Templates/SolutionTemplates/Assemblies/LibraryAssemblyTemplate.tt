@@ -1,0 +1,95 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.SolutionGenerators.AssemblyFiles.LibraryAssemblyFileGenerator" name="Model" #>
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{<#= Model.AssemblyInfo.UniqueProjectId.ToString().ToUpper() #>}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace><#= Model.AssemblyInfo.Name #></RootNamespace>
+    <AssemblyName><#= Model.AssemblyInfo.Name #></AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System"/>
+    <Reference Include="System.Core"/>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq"/>
+	<Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions"/>
+    <Reference Include="Microsoft.CSharp"/>
+    <Reference Include="System.Data"/>
+    <Reference Include="System.Net.Http"/>
+    <Reference Include="System.Xml"/>  
+	</ItemGroup>
+<ItemGroup>
+<# foreach(var reference in Model.AssemblyInfo.Packages) {#>
+<# foreach(var package in reference.IncludeHintPathTuples) {#>
+	<Reference Include="<#= package.Item1 #>">
+<# if(!string.IsNullOrEmpty(package.Item2)) { #>
+			 <HintPath><#= package.Item2 #></HintPath>
+<# } #>
+    </Reference>
+<# } #>
+<# } #>
+  </ItemGroup>
+   <ItemGroup>
+<# foreach(var file in Model.AssemblyInfo.FilesToCompile) {#>
+		<compile Include="<#=Path.Combine(file.GenerationInfo.RelativePathFolder.Substring(Model.AssemblyInfo.ProjectFileRelativePath.Length,file.GenerationInfo.RelativePathFolder.Length-Model.AssemblyInfo.ProjectFileRelativePath.Length).TrimStart('\\'), file.GenerationInfo.FileName)#>"/>
+<# }#>
+  </ItemGroup>
+ <ItemGroup>
+<# foreach(var import in Model.AssemblyInfo.AssemblyImports) {#>
+	<ProjectReference Include="..\\<#= Path.Combine(import.AssemblyInfo.ProjectFileRelativePath, import.AssemblyInfo.Name) #>.csproj">
+      <Project>{<#=  import.AssemblyInfo.UniqueProjectId.ToString().ToUpper() #>}</Project>
+      <Name><#= import.AssemblyInfo.Name #></Name>
+    </ProjectReference>
+<# } #>
+  </ItemGroup>
+<ItemGroup>
+<# foreach(var include in Model.AssemblyInfo.IncludeOnlys) { #>
+    <Content Include="<#= include #>" />
+<# } #>
+<# foreach(var content in Model.AssemblyInfo.Contents) { #>
+    <Content Include="..\\<#= content.OutputPath #>">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+<# } #>
+</ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+
+ </Project>

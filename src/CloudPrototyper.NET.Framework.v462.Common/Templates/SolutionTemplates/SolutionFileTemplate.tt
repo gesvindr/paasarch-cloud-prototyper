@@ -1,0 +1,31 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.SolutionGenerators.SolutionFileGenerator" name="Model" #>
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+<#foreach(var assembly in Model.Assemblies) {#>
+Project("{<#=assembly.AssemblyInfo.ProjectType.ToString().ToUpper()#>}") = "<#=assembly.AssemblyInfo.Name#>", "<#=assembly.AssemblyInfo.ProjectFileRelativePath#>\\<#=assembly.AssemblyInfo.Name#>.csproj", "{<#=assembly.AssemblyInfo.UniqueProjectId.ToString().ToUpper()#>}" 
+EndProject
+<#}#>
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<#foreach(var assembly in Model.Assemblies) {#>
+		{<#=assembly.AssemblyInfo.UniqueProjectId.ToString().ToUpper()#>}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{<#=assembly.AssemblyInfo.UniqueProjectId.ToString().ToUpper()#>}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{<#=assembly.AssemblyInfo.UniqueProjectId.ToString().ToUpper()#>}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{<#=assembly.AssemblyInfo.UniqueProjectId.ToString().ToUpper()#>}.Release|Any CPU.Build.0 = Release|Any CPU
+<#}#>
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

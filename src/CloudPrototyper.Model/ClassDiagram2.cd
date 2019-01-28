@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CloudPrototyper.Model.Resources.Storage.EntityStorage" Collapsed="true">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\EntityStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.Queue" Collapsed="true">
+    <Position X="6.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\Queue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.KeyValueDatabase" Collapsed="true">
+    <Position X="2" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\KeyValueDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.RelationalDatabase" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\RelationalDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Resource" Collapsed="true">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

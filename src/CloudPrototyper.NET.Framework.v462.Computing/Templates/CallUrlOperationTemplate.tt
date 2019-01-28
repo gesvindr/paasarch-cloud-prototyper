@@ -1,0 +1,33 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Computing.Generators.CallUrlOperationGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Net.Http;
+// Call url operation 
+namespace  <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.OperationInterface.Namespace #>.<#= Model.OperationInterface.Name #>
+    {
+		public const string Key = "<#= Model.ModelParameters.Name #>";
+
+		public void Execute(List<string> outputs) 
+		{
+			string result;
+            var request = WebRequest.Create("<#= Model.ModelParameters.Url #>");
+            request.Method = "GET";
+
+            var response = request.GetResponseAsync().Result;
+            using (var reader = new StreamReader(response.GetResponseStream()))
+            {
+                result = reader.ReadToEnd();
+            }
+            outputs.Add(result);
+		}
+	}
+}

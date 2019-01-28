@@ -1,0 +1,30 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.DataAccess.InsertEntityToEntityStorageGenerator" name="Model" #>
+using System.Collections.Generic;
+// Operation inserting entities to entity storage
+namespace  <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.OperationInterface.Namespace #>.<#= Model.OperationInterface.Name #>
+    {
+		
+		public const string Key = "<#= Model.ModelParameters.Name #>";
+		public <#= Model.Storage.Namespace #>.<#= Model.Storage.Name #> Storage { get; set; }
+
+		public <#= Model.Name #>(<#= Model.Storage.Namespace #>.<#= Model.Storage.Name #> storage)
+		{
+			Storage = storage;
+		}
+
+		public void Execute(List<string> output) 
+		{
+			Storage.Insert(
+			"<#= Model.ModelParameters.EntitySetName #>",
+			"<#= Model.ModelParameters.EntityName #>",
+			 <#= Model.ModelParameters.NumberOfEntities #>);
+		}
+    }
+}

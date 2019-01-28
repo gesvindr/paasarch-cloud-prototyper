@@ -1,0 +1,93 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.BusinessLayerGenerators.Services.HandlerGenerator" name="Model" #>
+using Microsoft.ServiceBus;
+using Microsoft.ServiceBus.Messaging;
+using Newtonsoft.Json;
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.Threading;
+using Castle.Windsor;
+using System.Collections.Generic;
+// Queue handler
+namespace <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.MessageBusHandlerInterface.Namespace #>.<#= Model.MessageBusHandlerInterface.Name #>
+	{
+        private string connectionString;
+        private string queueName;
+		public const string Name = "<#= Model.Name #>";
+        private QueueClient _client;
+        private ManualResetEvent completedEvent = new ManualResetEvent(false);
+
+<# foreach(var action in Model.Actions) { #>
+		public <#= action.Namespace #>.<#= action.Name #> <#= action.Name #> { get; set; }
+<# } #>
+		public <#= Model.Name #>(
+<# foreach(var action in Model.Actions) {  if(Model.Actions.Last().Equals(action)) {#>
+		<#= action.Namespace #>.<#= action.Name #> <#= action.Name.ToLower() #>
+<# } else { #>
+		<#= action.Namespace #>.<#= action.Name #> <#= action.Name.ToLower() #>,
+<# }} #>
+		) 
+		{
+<# foreach(var action in Model.Actions) { #>
+			this.<#= action.Name #> = <#= action.Name.ToLower() #>;
+<# } #>
+            this.connectionString = "<#= Model.AzureServiceBusQueue.ConnectionString #>";
+            this.queueName = "<#= Model.AzureServiceBusQueue.Name #>";
+        }
+
+        public void OnStart()
+        {
+        
+            // Initialize the connection to Service Bus Queue
+            _client = QueueClient.CreateFromConnectionString(connectionString);
+            _client.RetryPolicy = new RetryExponential(TimeSpan.FromSeconds(0.3), TimeSpan.FromSeconds(2), 5);
+            //Client.PrefetchCount = 4;
+        }
+
+        public void Run()
+        {
+            Trace.WriteLine("Starting processing of messages");
+
+            // Initiates the message pump and callback is invoked for each message that is received, calling close on the client will stop the pump.
+            _client.OnMessage((receivedMessage) =>
+            {
+                // Get DateTime when task processing began
+                DateTime startedAt = DateTime.Now;
+
+                try
+                {
+
+                    using (StreamReader sr = new StreamReader(receivedMessage.GetBody<System.IO.Stream>()))
+                    {
+                        using (JsonTextReader jr = new JsonTextReader(sr))
+                        {
+
+                            JsonSerializer serializer = new JsonSerializer();
+                            var messageBody = serializer.Deserialize(jr);
+<# foreach(var action in Model.ModelParameters) { #>
+			if(receivedMessage.Label == "<#= (action.Trigger as CloudPrototyper.Model.Applications.MessageReceivedTrigger).MessageType #>")
+			{
+				 <#= Model.Actions.FirstOrDefault(x=>x.Key.Equals(action.Name)).Name #>.Execute(new List<string>());
+			} 
+<# } #>
+							  Trace.WriteLine("Processing of message completed " + receivedMessage.Label);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Trace.WriteLine("Failed processing of message " + receivedMessage.Label);
+                }
+            }, new OnMessageOptions() { MaxConcurrentCalls = 1 });
+
+            completedEvent.WaitOne();
+        }
+    }
+}

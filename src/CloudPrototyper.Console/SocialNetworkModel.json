@@ -1,0 +1,653 @@
+{
+	"$type": "CloudPrototyper.Model.Prototype, CloudPrototyper.Model",
+	"Applications": [
+		{
+			"$type": "CloudPrototyper.Model.Applications.RestApiApplication, CloudPrototyper.Model",
+			"Actions": [
+				{
+					"$type": "CloudPrototyper.Model.Applications.CallableAction, CloudPrototyper.Model",
+					"Name": "InsertWallRecord",
+					"Operation": {
+						"$type": "CloudPrototyper.Model.Operations.SequenceOperation, CloudPrototyper.Model",
+						"Operations": [
+							{
+								"$type": "CloudPrototyper.Model.Operations.Communication.AddMessageToQueue, CloudPrototyper.Model",
+								"QueueName": "WorkerQueue",
+								"EntityName": "InsertWallRecordTask",
+								"Name": "InsertWallRecordTaskToWorkerQueue",
+								"Description": null
+							}
+						],
+						"Name": "InsertWallRecordSeqOperation",
+						"Description": null
+					}
+				},
+				{
+					"$type": "CloudPrototyper.Model.Applications.CallableAction, CloudPrototyper.Model",
+					"Name": "GetWallRecords",
+					"Operation": {
+						"$type": "CloudPrototyper.Model.Operations.SequenceOperation, CloudPrototyper.Model",
+						"Operations": [
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkStorage",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 30
+								},
+								"Name": "Take30WallRecordsFromSocialNetworkStorage",
+								"Description": null
+							}
+						],
+						"Name": "GetWallRecordsSeq",
+						"Description": null
+					}
+				},
+				{
+					"$type": "CloudPrototyper.Model.Applications.CallableAction, CloudPrototyper.Model",
+					"Name": "GetWallRecordsDB",
+					"Operation": {
+						"$type": "CloudPrototyper.Model.Operations.SequenceOperation, CloudPrototyper.Model",
+						"Operations": [
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkDB",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 30
+								},
+								"Name": "Take30WallRecordsFromDB",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkDB",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 30
+								},
+								"Name": "Take30WallRecordsFromDB2",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkDB",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 30
+								},
+								"Name": "Take30WallRecordsFromDB3",
+								"Description": null
+							}
+						],
+						"Name": "GetWallRecordsDBSeq",
+						"Description": null
+					}
+				}
+			],
+			"Name": "SocialNetworkRestApi",
+			"Platform": "DotNet46",
+			"DeployTo": null
+		},
+		{
+			"$type": "CloudPrototyper.Model.Applications.WorkerApplication, CloudPrototyper.Model",
+			"Actions": [
+				{
+					"$type": "CloudPrototyper.Model.Applications.TriggeredAction, CloudPrototyper.Model",
+					"Trigger": {
+						"$type": "CloudPrototyper.Model.Applications.MessageReceivedTrigger, CloudPrototyper.Model",
+						"MessageType": "InsertWallRecordTask",
+						"QueueName": "WorkerQueue"
+					},
+					"Name": "InsertWallRecord",
+					"Operation": {
+						"$type": "CloudPrototyper.Model.Operations.SequenceOperation, CloudPrototyper.Model",
+						"Operations": [
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkDB",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 1
+								},
+								"Name": "FindExistingRecordByKeyFromSocialNetworkDB",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "User",
+								"EntitySetName": "User",
+								"EntityStorageName": "SocialNetworkDB",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 1
+								},
+								"Name": "ValidateUserPermission",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.InsertEntityToEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkDB",
+								"NumberOfEntities": 1,
+								"Name": "OneWallRecordToSocialNetworkDB",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.Communication.AddMessageToQueue, CloudPrototyper.Model",
+								"QueueName": "WorkerQueue",
+								"EntityName": "GenerateWallRecordTask",
+								"Name": "AddGenerateWallRecordTaskToWorkerQueue",
+								"Description": null
+							}
+						],
+						"Name": "InsertWallRecordSeq",
+						"Description": null
+					}
+				},
+				{
+					"$type": "CloudPrototyper.Model.Applications.TriggeredAction, CloudPrototyper.Model",
+					"Trigger": {
+						"$type": "CloudPrototyper.Model.Applications.MessageReceivedTrigger, CloudPrototyper.Model",
+						"MessageType": "GenerateWallRecordTask",
+						"QueueName": "WorkerQueue"
+					},
+					"Name": "GenerateWallRecordTask",
+					"Operation": {
+						"$type": "CloudPrototyper.Model.Operations.SequenceOperation, CloudPrototyper.Model",
+						"Operations": [
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkDB",
+								"Filter": {
+									"$type": "CloudPrototyper.Model.Operations.DataAccess.FilterCondition, CloudPrototyper.Model",
+									"UseKey": true,
+									"OnAttribute": "Id",
+									"IsNominal": false,
+									"NumberOfResults": 1
+								},
+								"Name": "FindOneWallRecordByKeyFromSocialNetworkDB",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.InsertEntityToEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "WallRecords",
+								"EntityStorageName": "SocialNetworkStorage",
+								"NumberOfEntities": 30,
+								"Name": "InsertThirtyWallRecordsToSocialNetworkStorage",
+								"Description": null
+							},
+							{
+								"$type": "CloudPrototyper.Model.Operations.DataAccess.InsertEntityToEntityStorage, CloudPrototyper.Model",
+								"EntityName": "WallRecord",
+								"EntitySetName": "PrivateMessages",
+								"EntityStorageName": "SocialNetworkStorage",
+								"NumberOfEntities": 2,
+								"Name": "InsertTwoWallRecordsToSocialNetworkStorage",
+								"Description": null
+							}
+						],
+						"Name": "GenerateWallRecordTaskSeq",
+						"Description": null
+					}
+				}
+			],
+			"Name": "SocialNetworkWorkerApp",
+			"Platform": "DotNet46",
+			"DeployTo": null
+		}
+	],
+	"Entities": [
+		{
+			"$type": "CloudPrototyper.Model.Entities.Entity, CloudPrototyper.Model",
+			"Name": "WallRecord",
+			"Description": null,
+			"Properties": [
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number1",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number2",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number3",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number4",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number5",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message2",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message3",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message4",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message5",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 500,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Id",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 9,
+					"IsIndexed": true
+				}
+			]
+		},
+		{
+			"$type": "CloudPrototyper.Model.Entities.Entity, CloudPrototyper.Model",
+			"Name": "InsertWallRecordTask",
+			"Description": null,
+			"Properties": [
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number1",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number2",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number3",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number4",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number5",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message2",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message3",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message4",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message5",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 500,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Id",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 9,
+					"IsIndexed": true
+				}
+			]
+		},
+		{
+			"$type": "CloudPrototyper.Model.Entities.Entity, CloudPrototyper.Model",
+			"Name": "GenerateWallRecordTask",
+			"Description": null,
+			"Properties": [
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number1",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 0,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Id",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 9,
+					"IsIndexed": true
+				}
+			]
+		},
+		{
+			"$type": "CloudPrototyper.Model.Entities.Entity, CloudPrototyper.Model",
+			"Name": "User",
+			"Description": null,
+			"Properties": [
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number1",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number2",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number3",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number4",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Number5",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 8,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message2",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message3",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message4",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Message5",
+					"Type": "System.String",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 50,
+					"IsIndexed": false
+				},
+				{
+					"$type": "CloudPrototyper.Model.Entities.PropertyInfo, CloudPrototyper.Model",
+					"Name": "Id",
+					"Type": "System.Int32",
+					"IsReference": false,
+					"IsMany": false,
+					"ContentSize": 9,
+					"IsIndexed": true
+				}
+			]
+		}
+	],
+	"Resources": [
+		{
+			"$type": "CloudPrototyper.Azure.Resources.Storage.AzureSQLDatabase, CloudPrototyper.Azure",
+			"PerformanceTier": "standard",
+			"ServiceObjective": "S3",
+			"EntitySets": [
+				{
+					"$type": "CloudPrototyper.Model.Resources.Storage.EntitySet, CloudPrototyper.Model",
+					"Name": "WallRecords",
+					"EntityName": "WallRecord",
+					"Count": 25000
+				},
+				{
+					"$type": "CloudPrototyper.Model.Resources.Storage.EntitySet, CloudPrototyper.Model",
+					"Name": "Users",
+					"EntityName": "User",
+					"Count": 5000
+				}
+			],
+			"Name": "SocialNetworkDB",
+			"DeployTo": "Azure"
+		},
+		{
+			"$type": "CloudPrototyper.NET.Framework.v462.TblStorage.Model.AzureTableStorage, CloudPrototyper.NET.Framework.v462.TblStorage",
+			"EntitySets": [
+				{
+					"$type": "CloudPrototyper.Model.Resources.Storage.EntitySet, CloudPrototyper.Model",
+					"Name": "WallRecords",
+					"EntityName": "WallRecord",
+					"Count": 25000
+				},
+				{
+					"$type": "CloudPrototyper.Model.Resources.Storage.EntitySet, CloudPrototyper.Model",
+					"Name": "PrivateMessages",
+					"EntityName": "WallRecord",
+					"Count": 5000
+				},
+				{
+					"$type": "CloudPrototyper.Model.Resources.Storage.EntitySet, CloudPrototyper.Model",
+					"Name": "ImportantWallRecords",
+					"EntityName": "WallRecord",
+					"Count": 5000
+				},
+				{
+					"$type": "CloudPrototyper.Model.Resources.Storage.EntitySet, CloudPrototyper.Model",
+					"Name": "FavouriteWallRecords",
+					"EntityName": "WallRecord",
+					"Count": 5000
+				}
+			],
+			"Name": "SocialNetworkStorage",
+			"DeployTo": "Azure"
+		},
+		{
+			"$type": "CloudPrototyper.Azure.Resources.AzureAppService, CloudPrototyper.Azure",
+			"PerformanceTier": "StandardS3",
+			"PlanName": null,
+			"WithApplication": "SocialNetworkRestApi",
+			"Name": "HostingApi",
+			"DeployTo": "Azure"
+		},
+		{
+			"$type": "CloudPrototyper.Azure.Resources.AzureAppService, CloudPrototyper.Azure",
+			"PerformanceTier": "StandardS3",
+			"PlanName": null,
+			"WithApplication": "SocialNetworkWorkerApp",
+			"Name": "HostingWorker",
+			"DeployTo": "Azure"
+		},
+		{
+			"$type": "CloudPrototyper.Azure.Resources.Storage.AzureServiceBusQueue, CloudPrototyper.Azure",
+			"SizeInGB": 1,
+			"Name": "WorkerQueue",
+			"DeployTo": "Azure"
+		}
+	]
+}

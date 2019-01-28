@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CloudPrototyper.NET.Interface.Generation.CodeGeneratorBase">
+    <Position X="4.25" Y="0.75" Width="1.75" />
+    <Members>
+      <Method Name="CodeGeneratorBase" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAQAAAAAIAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Generation\CodeGeneratorBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.GeneratorDependency">
+    <Position X="9.25" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Generation\GeneratorDependency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.NET.Interface.Generation.GeneratorDependency&lt;T&gt;">
+    <Position X="6.75" Y="1.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Generation\GeneratorDependency.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

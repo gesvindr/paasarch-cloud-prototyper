@@ -1,0 +1,69 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.DataLayerGenerators.DataFactories.DataFactoryGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Reflection;
+// Data factory
+namespace  <#=Model.Namespace#>
+{
+    public class  <#=Model.Name#> :  <#=Model.DataFactoryInterface.Namespace#>.<#=Model.DataFactoryInterface.Name#>< <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>>
+    {
+        private static readonly Random Random = new Random();
+
+        public <#=Model.Name#>()
+        {
+
+        }
+		public <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#> One() 
+		{
+			return GetData();
+		}
+
+        public <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>[] All(string dbName)
+        { 
+			Type classType = typeof(<#=Model.DataGenerator.Namespace#>.<#=Model.DataGenerator.Name#>);
+			var method = classType.GetMethod("GetRowCount");
+            var rows = (int)method.Invoke(null, new object[] { dbName, typeof(<#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>) });
+            return Generate(rows);
+        }
+
+        private <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>[] Generate(int rows)
+        {
+            List<<#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>> entities = new List<<#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>>();
+            for(int i = 0; i < rows; i++) 
+			{
+				var entity = GetData();
+<# foreach(var prop in Model.Entity.ModelParameters.Properties.Where(x => x.IsReference)) { #>
+				entity.<#= prop.Name #> = <#= prop.Type #>DataFactory.GetData();
+				
+<# } #>
+			entities.Add(entity);
+			}
+            return entities.ToArray();
+        }
+
+        public static <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#> GetData()
+        {
+            <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>  entity = new <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>();
+            var props = entity.GetType().GetProperties();
+            foreach (var prop in props)
+            {
+                if (<#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>.GetContentSize(prop.Name) > 0)
+                {
+                    Type classType = typeof(<#=Model.DataGenerator.Namespace#>.<#=Model.DataGenerator.Name#>);
+                    MethodInfo methodInfoClass = classType.GetMethod("GetData", BindingFlags.Static | BindingFlags.Public);
+                    MethodInfo methodInfoMethod = methodInfoClass.MakeGenericMethod(new Type[] { prop.PropertyType });
+                    var value = methodInfoMethod.Invoke(null, new object[] { <#=Model.Entity.Namespace#>.<#=Model.Entity.Name#>.GetContentSize(prop.Name) });
+                    prop.SetValue(entity, value, null);
+                }
+            }
+            return entity;
+        }
+    }
+}

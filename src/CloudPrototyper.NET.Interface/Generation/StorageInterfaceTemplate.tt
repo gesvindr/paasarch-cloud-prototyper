@@ -1,0 +1,20 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Interface.Generation.StorageInterfaceGenerator" name="Model" #>
+
+using System;
+using System.Collections.Generic;
+
+namespace  <#=Model.Namespace#>
+{
+    public interface  <#=Model.Name#>
+    {
+        string GetName();
+        List<object> GetEntities(string entitySetName, string entityName, <#= Model.Query.Namespace #>.<#= Model.Query.Name #> query);
+        void InsertAll(string entitySetName, string entityName, object[] toInsert);
+        void Insert(string entitySetName, string entityName, int count);
+    }
+}

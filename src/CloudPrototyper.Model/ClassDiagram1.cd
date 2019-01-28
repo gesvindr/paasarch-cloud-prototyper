@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CloudPrototyper.Model.Applications.Application" Collapsed="true">
+    <Position X="10.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Applications\Application.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Prototype" Collapsed="true">
+    <Position X="10.75" Y="3" Width="1.5" />
+    <AssociationLine Name="Resources" Type="CloudPrototyper.Model.Resources.Resource">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.11" Y="0.06" Height="0.182" Width="1.298" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Prototype.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Applications" />
+      <Property Name="Entities" />
+      <Property Name="Resources" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Entities.Entity" Collapsed="true">
+    <Position X="12.75" Y="3" Width="1.5" />
+    <AssociationLine Name="Properties" Type="CloudPrototyper.Model.Entities.PropertyInfo">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.029" Y="0.12" Height="0.182" Width="1.024" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Entities\Entity.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Properties" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Resource" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Resource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Entities.PropertyInfo" Collapsed="true">
+    <Position X="12.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAgAEAAAQgAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\PropertyInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.EntityStorage" Collapsed="true">
+    <Position X="5" Y="4" Width="1.5" />
+    <AssociationLine Name="EntitySets" Type="CloudPrototyper.Model.Resources.Storage.EntitySet" FixedToPoint="true">
+      <Path>
+        <Point X="5.562" Y="4" />
+        <Point X="5.562" Y="3.562" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.152" Y="0.112" Height="0.182" Width="0.902" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\EntityStorage.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="EntitySets" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.RelationalDatabase" Collapsed="true">
+    <Position X="5.5" Y="5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\RelationalDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.KeyValueDatabase" Collapsed="true">
+    <Position X="3.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\KeyValueDatabase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.HostingEnvironment" Collapsed="true">
+    <Position X="8.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\HostingEnvironment.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.EntitySet" Collapsed="true">
+    <Position X="5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\EntitySet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.RestApiApplication" Collapsed="true">
+    <Position X="11.75" Y="5" Width="1.75" />
+    <AssociationLine Name="Actions" Type="CloudPrototyper.Model.Applications.CallableAction">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.025" Y="0.393" Height="0.182" Width="0.734" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\RestApiApplication.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Actions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.WorkerApplication" Collapsed="true">
+    <Position X="9.5" Y="5" Width="1.75" />
+    <InheritanceLine Type="CloudPrototyper.Model.Applications.Application" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="4.562" />
+        <Point X="11.5" Y="4.76" />
+        <Point X="10.312" Y="4.76" />
+        <Point X="10.312" Y="5" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="Actions" Type="CloudPrototyper.Model.Applications.TriggeredAction">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.086" Y="0.381" Height="0.182" Width="0.723" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\WorkerApplication.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Actions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.Trigger" Collapsed="true">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\Trigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.MessageReceivedTrigger" Collapsed="true">
+    <Position X="5.25" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\MessageReceivedTrigger.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.TriggeredAction" Collapsed="true">
+    <Position X="7.5" Y="5" Width="1.5" />
+    <AssociationLine Name="Trigger" Type="CloudPrototyper.Model.Applications.Trigger" FixedFromPoint="true">
+      <Path>
+        <Point X="8.062" Y="5.691" />
+        <Point X="8.062" Y="6.25" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="0.039" Y="0.37" Height="0.182" Width="0.829" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\TriggeredAction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Trigger" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.Action" Collapsed="true">
+    <Position X="10.75" Y="6.25" Width="1.5" />
+    <AssociationLine Name="Operation" Type="CloudPrototyper.Model.Operations.Operation">
+      <MemberNameLabel ManuallyPlaced="true" ManuallySized="true">
+        <Position X="-0.39" Y="0.331" Height="0.182" Width="0.941" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Applications\Action.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Operation" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Applications.CallableAction" Collapsed="true">
+    <Position X="14" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Applications\CallableAction.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Operations.Communication.AddMessageToQueue" Collapsed="true">
+    <Position X="6.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQABAgAAAAAAAAA=</HashCode>
+      <FileName>Operations\Communication\AddMessageToQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Operations.Operation" Collapsed="true">
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAQAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Operations\Operation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Resources.Storage.Queue" Collapsed="true">
+    <Position X="6.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Resources\Storage\Queue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Operations.DataAccess.LoadEntitiesFromEntityStorage" Collapsed="true">
+    <Position X="8.75" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgAACAAAAAA=</HashCode>
+      <FileName>Operations\DataAccess\LoadEntitiesFromEntityStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Operations.DataAccess.InsertEntityToEntityStorage" Collapsed="true">
+    <Position X="11.25" Y="7.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAgAACAAAAAA=</HashCode>
+      <FileName>Operations\DataAccess\InsertEntityToEntityStorage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CloudPrototyper.Model.Operations.SequenceOperation" Collapsed="true">
+    <Position X="13.75" Y="7.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Operations\SequenceOperation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

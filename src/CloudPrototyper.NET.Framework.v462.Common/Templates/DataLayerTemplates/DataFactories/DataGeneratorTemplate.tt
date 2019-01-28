@@ -1,0 +1,92 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.DataLayerGenerators.DataFactories.DataGeneratorGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+using System.Reflection;
+using System.Threading;
+// Data generator
+namespace <#= Model.Namespace #>
+{
+    public class <#= Model.Name #>
+    {
+       private Dictionary<Type,object> factories = new Dictionary<Type,object>();
+        private static readonly Random Random = new Random();
+
+		public static <#= Model.Name #> GetInstance() 
+		{
+			return new <#= Model.Name #>();
+		}
+
+		public T Generate<T>()  where T : <#=Model.EntityInterface.Namespace#>.<#=Model.EntityInterface.Name#>
+		{
+			if(factories.ContainsKey(typeof(T)))
+			{
+				return (factories[typeof(T)] as <#= Model.DataFactoryInterface.Namespace #>.<#= Model.DataFactoryInterface.Name #><T>).One();
+			} 
+			else 
+			{
+				var factoryType = Assembly.GetAssembly(typeof (<#= Model.DataFactoryInterface.Namespace #>.<#= Model.DataFactoryInterface.Name #><>)).GetTypes().First(t => !t.IsInterface && t.GetInterfaces().Any(i => i.Name == typeof (<#= Model.DataFactoryInterface.Namespace #>.<#= Model.DataFactoryInterface.Name #><>).Name && i.GenericTypeArguments.Contains(typeof(T))));
+
+				var instance = (<#= Model.DataFactoryInterface.Namespace #>.<#= Model.DataFactoryInterface.Name #><T>)Activator.CreateInstance(factoryType);
+				factories.Add(typeof(T), instance);
+				return instance.One();
+			}
+		}
+
+		public List<T> Generate<T>(int count)  where T : <#=Model.EntityInterface.Namespace#>.<#=Model.EntityInterface.Name#>
+		{
+			List<T> output = new List<T>();
+
+			for(int i = 0; i < count; i++)
+			{
+				T x = Generate<T>();
+				output.Add(x);
+			}
+
+			return output;
+        }
+		public static object GetData<T>(int contentSize)
+        {
+			lock (Random)
+            {
+           
+			    switch (typeof(T).Name)
+                {
+                    case "String":
+                    case "System.String":
+                    case "string":
+                        return CreateString(contentSize);
+                    case "Int32":
+                    case "System.Int32":
+                    case "double":
+                    case "int":
+                    case "long":
+                    case "float":
+                        return Random.Next(0, (int)Math.Pow(10, contentSize));
+                    default:
+                        return null;
+                
+				}     
+            }
+        }
+        
+        public static string CreateString(int stringLength)
+        {
+            const string allowedChars = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz0123456789";
+            char[] chars = new char[stringLength];
+
+            for (int i = 0; i < stringLength; i++)
+            {
+                chars[i] = allowedChars[Random.Next(0, allowedChars.Length)];
+            }
+
+            return new string(chars);
+        }
+    }
+}

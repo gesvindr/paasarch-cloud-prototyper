@@ -1,0 +1,38 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.Workers.Utils.WorkerContainerInstallerGenerator" name="Model" #>
+using System;
+using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.SubSystems.Configuration;
+using Castle.Windsor;
+// IoC intaller
+namespace <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #>  : IWindsorInstaller
+    {
+        public void Install(IWindsorContainer container, IConfigurationStore store)
+        {
+            container.Register(
+                Classes.FromAssemblyContaining<<#= Model.OperationInterface.Namespace #>.<#= Model.OperationInterface.Name #>>()
+                    .BasedOn<<#= Model.OperationInterface.Namespace #>.<#= Model.OperationInterface.Name #>>()
+                    .LifestyleTransient(),
+                Classes.FromAssemblyContaining<<#= Model.ActionBase.Namespace #>.<#= Model.ActionBase.Name #>>()
+                    .BasedOn<<#= Model.ActionBase.Namespace #>.<#= Model.ActionBase.Name #>>()
+                    .LifestyleTransient(),
+                Classes.FromAssemblyContaining<<#= Model.MessageBusInterface.Namespace #>.<#= Model.MessageBusInterface.Name #>>()
+                    .BasedOn<<#= Model.MessageBusInterface.Namespace #>.<#= Model.MessageBusInterface.Name #>>()
+                    .LifestyleTransient(),
+                Classes.FromAssemblyContaining<<#= Model.StorageInterface.Namespace #>.<#= Model.StorageInterface.Name #>>()
+                    .BasedOn<<#= Model.StorageInterface.Namespace #>.<#= Model.StorageInterface.Name #>>()
+                    .LifestyleTransient(),
+                Classes.FromAssemblyContaining<<#= Model.MessageBusHandlerInterface.Namespace #>.<#= Model.MessageBusHandlerInterface.Name #>>()
+                    .BasedOn<<#= Model.MessageBusHandlerInterface.Namespace #>.<#= Model.MessageBusHandlerInterface.Name #>>()
+                    .LifestyleSingleton().WithServiceAllInterfaces(),
+				Component.For<IWindsorContainer>().Instance(container).LifestyleSingleton()
+                );
+        }
+    }
+}

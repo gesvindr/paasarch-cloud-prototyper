@@ -1,0 +1,106 @@
+{
+  "version": 2,
+  "exports": {
+    "CloudPrototyper.Azure/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.Azure.dll": {}
+      },
+      "runtime": {
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.Azure.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.Azure.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "CloudPrototyper.Interface/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.Interface.dll": {}
+      },
+      "runtime": {
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.Interface.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.Interface.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "CloudPrototyper.Model/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.Model.dll": {}
+      },
+      "runtime": {
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.Model.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.Model.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "CloudPrototyper.NET.Framework.v462.Redis/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.NET.Framework.v462.Redis.dll": {}
+      },
+      "runtime": {
+        "../packages/Castle.Core.3.3.0/lib/net45/Castle.Core.dll": {},
+        "../packages/Castle.Windsor.3.4.0/lib/net45/Castle.Windsor.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.NET.Framework.v462.Redis.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.NET.Framework.v462.Redis.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "CloudPrototyper.NET.Interface/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.NET.Interface.dll": {}
+      },
+      "runtime": {
+        "../packages/Castle.Windsor.3.4.0/lib/net45/Castle.Windsor.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.NET.Interface.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.NET.Interface.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,121 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.DataLayerGenerators.AzureSqlDatabase.AzureSqlDatabaseContextGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+// Azure sql database
+namespace <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : DbContext, <#= Model.StorageInterface.Namespace #>.<#= Model.StorageInterface.Name #>
+    {
+		private static readonly Random Random = new Random();
+		private readonly Dictionary<Type, object> _dbSets = new Dictionary<Type, object>();
+		private readonly Dictionary<string, Tuple<Type,int>> _names = new Dictionary<string, Tuple<Type,int>>();
+		public const string Name = "<#= Model.ModelParameters.Name #>";
+
+		static <#= Model.Name #>()
+		{
+			Database.SetInitializer<<#= Model.Namespace #>.<#= Model.Name #>>(null);        
+		} 
+
+		public <#= Model.Name #>() : base("<#= Model.ModelParameters.ConnectionString #>") 
+		{ 
+
+			Database.SetInitializer<<#= Model.Namespace #>.<#= Model.Name #>>(new CreateDatabaseIfNotExists<<#= Model.Namespace #>.<#= Model.Name #>>());
+            Configuration.AutoDetectChangesEnabled = false;
+			InitDbSetDictionary();
+		}
+		
+        public string GetName()
+        {
+            return "<#= Model.Key #>";
+        }
+		
+<# foreach(var entity in Model.Entities) { #>
+		public DbSet<<#=entity.Namespace#>.<#= entity.Name #>> <#= entity.Name #>s { get; set; }
+<# } #>
+
+		public DbSet<T> GetDbSet<T>(Type entityType) where T : class, <#=Model.EntityInterface.Namespace#>.<#= Model.EntityInterface.Name #>
+        {
+            return _dbSets[typeof (T)] as DbSet<T>;
+        }
+		
+		public List<object> GetEntities(string entitySetName, string entityName, <#= Model.Query.Namespace #>.<#= Model.Query.Name #> query)
+		{
+			if(query.IsNominal) 
+			{
+<# foreach(var entity in Model.Entities) { #>
+				if(entityName == "<#= entity.Name #>")
+				{
+					if(query.PropertyName == "Id")
+					{   var parameter = int.Parse(query.NominalParameter);
+						return <#= entity.Name #>s.Where(x=> x.Id == parameter).AsNoTracking().ToList().Cast<object>().ToList();
+					}
+<# foreach(var prop in entity.ModelParameters.Properties.Where(x=>x.Name != "Id")) { #>
+					if(query.PropertyName == "<#= prop.Name #>") 
+					{
+						return <#= entity.Name #>s.Where(x=>string.Compare(x.<#= prop.Name #>.ToString(), query.NominalParameter, StringComparison.Ordinal) == 0).AsNoTracking().ToList().Cast<object>().ToList();
+					}
+<# } #>
+				}	 
+<# } #>
+			}
+			else 
+			{
+<# foreach(var entity in Model.Entities) { #>
+				if(entityName == "<#= entity.Name #>")
+				{
+					if(query.PropertyName == "Id")
+					{
+					    var minParameter = int.Parse(query.MinValue);
+					    var maxParameter = int.Parse(query.MaxValue);
+						return <#= entity.Name #>s.Where(x=> x.Id >= minParameter && x.Id <= maxParameter).AsNoTracking().ToList().Cast<object>().ToList();
+					}
+<# foreach(var prop in entity.ModelParameters.Properties.Where(x=>x.Name != "Id")) { #>
+					if(query.PropertyName == "<#= prop.Name #>") 
+					{
+						return <#= entity.Name #>s.Where(x=>string.Compare(x.<#= prop.Name #>.ToString(), query.MinValue, StringComparison.Ordinal) >= 0 && string.Compare(x.<#= prop.Name #>.ToString(), query.MaxValue, StringComparison.Ordinal) <= 0).AsNoTracking().ToList().Cast<object>().ToList();
+					}
+<# } #>
+				}	 
+<# } #>
+			} 
+
+			return new List<object>();	
+		}
+		public void InsertAll(string entitySetName, string entityName, object[] toInsert)
+		{
+			Set(_names[entitySetName].Item1).AddRange(toInsert);
+			SaveChanges();
+		}
+				
+		
+		public void Insert(string entitySetName,string entityName, int count)
+		{
+			object[] generated = null;
+<# foreach(var entity in Model.Entities) { #>
+			if(entityName == "<#= entity.Name #>")
+			{
+				generated = <#=Model.DataGenerator.Namespace#>.<#= Model.DataGenerator.Name #>.GetInstance().Generate<<#=entity.Namespace#>.<#= entity.Name #>>(count).ToArray();
+			} 
+<# } #>
+			InsertAll(entitySetName,entityName,generated);
+
+		}
+
+		private void InitDbSetDictionary()
+        {
+<# foreach(var entity in Model.Entities) { #>
+			_dbSets.Add(typeof(<#=entity.Namespace#>.<#= entity.Name #>), <#= entity.Name #>s); 
+<# } #>
+<# foreach(var set in Model.ModelParameters.EntitySets) { #>
+			_names.Add("<#= set.Name #>", new Tuple<Type,int>(typeof(<#= Model.Entities.Single(x=>x.Name == set.EntityName).Namespace #>.<#=  Model.Entities.Single(x=>x.Name == set.EntityName).Name #>),<#=set.Count#>));
+<# } #>
+        }
+    }
+}

@@ -1,0 +1,19 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.SolutionGenerators.Packages.PackagesConfigGenerator" name="Model" #>
+<packages>
+  <package id="Microsoft.AspNet.WebApi" version="5.2.3" targetFramework="net462" />
+  <package id="Microsoft.AspNet.WebApi.Client" version="5.2.3" targetFramework="net462" />
+  <package id="Microsoft.AspNet.WebApi.Core" version="5.2.3" targetFramework="net462" />
+  <package id="Microsoft.AspNet.WebApi.WebHost" version="5.2.3" targetFramework="net462" />
+  <package id="Microsoft.CodeDom.Providers.DotNetCompilerPlatform" version="1.0.0" targetFramework="net462" />
+  <package id="Microsoft.Net.Compilers" version="1.0.0" targetFramework="net462" developmentDependency="true" />
+  <package id="Newtonsoft.Json" version="6.0.4" targetFramework="net462" />
+  <package id="MSBuild.Microsoft.VisualStudio.Web.targets" version="14.0.0.3" targetFramework="net462" />
+<# foreach(var package in Model.Packages) { #>
+  <package id="<#= package.Id #>" version="<#= package.Version #>" targetFramework="<#= package.Framework #>" />
+<# } #>
+</packages>

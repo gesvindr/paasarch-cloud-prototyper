@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{95724B89-38DD-47B3-A309-0FB5152C94A3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudPrototyper.NET.Framework.v462.Common</RootNamespace>
+    <AssemblyName>CloudPrototyper.NET.Framework.v462.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.3.3\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.4.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.4.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=3.13.9.1126, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.Platform, Version=3.13.9.1126, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Factories\EntityFactory.cs" />
+    <Compile Include="Factories\NugetFactory.cs" />
+    <Compile Include="Factories\OperationFactory.cs" />
+    <Compile Include="Factories\ProjectFactory.cs" />
+    <Compile Include="Factories\ProjectType.cs" />
+    <Compile Include="Factories\ResourceFactory.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\App_Start\WebApiConfigGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\Controllers\ActionControllerGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\GlobalAsaxGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\GlobalAsaxCsGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\Utils\CustomHttpActivatorGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\Utils\WebApiContainerInstallerGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\WebConfigGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\WebDebugConfigGenerator.cs" />
+    <Compile Include="Generators\ApiLayerGenerators\WebReleaseConfigGenerator.cs" />
+    <Compile Include="Generators\BusinessLayerGenerators\ActionBaseGenerator..cs" />
+    <Compile Include="Generators\BusinessLayerGenerators\ActionGenerator.cs" />
+    <Compile Include="Generators\Communication\AddMessageToQueueGenerator.cs" />
+    <Compile Include="Generators\Computing\ComputeFactorialGenerator.cs" />
+    <Compile Include="Generators\DataAccess\InsertEntityToEntityStorageGenerator.cs" />
+    <Compile Include="Generators\DataAccess\LoadEntitiesFromEntityStorageGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\AzureMessageQueue\AzureServiceBusQueueGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\DataFactories\DataFactoryGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\DataFactories\DataFactoryInterfaceGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\DataFactories\DataGeneratorGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\Entities\EntityGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\Entities\EntityInterfaceGenerator.cs" />
+    <Compile Include="Generators\DataLayerGenerators\AzureSqlDatabase\AzureSqlDatabaseContextGenerator.cs" />
+    <Compile Include="Generators\BusinessLayerGenerators\SequenceOperationGenerator.cs" />
+    <Compile Include="Generators\Workers\Utils\WorkerContainerInstallerGenerator.cs" />
+    <Compile Include="Registrations\ApiLayerRegistrations\ControllerRegistrations\ActionControllerRegistrations.cs" />
+    <Compile Include="Registrations\ApiLayerRegistrations\GlobalAsaxCsRegistrations.cs" />
+    <Compile Include="Registrations\ApiLayerRegistrations\Utils\WebApiContainerInstallerRegistrations.cs" />
+    <Compile Include="Registrations\BusinessLayerRegistrations\ActionBaseRegistrations.cs" />
+    <Compile Include="Registrations\BusinessLayerRegistrations\ActionRegistrations.cs" />
+    <Compile Include="Registrations\BusinessLayerRegistrations\SequenceOperationRegistrations.cs" />
+    <Compile Include="Registrations\BusinessLayerRegistrations\Services\HandlerRegistrations.cs" />
+    <Compile Include="Registrations\CommunicationRegistrations\AddMessageToQueueRegistrations.cs" />
+    <Compile Include="Registrations\ComputingRegistrations\ComputeFactorialRegistrations.cs" />
+    <Compile Include="Registrations\DataAccessRegistrations\InsertEntityToEntityStorageRegistrations.cs" />
+    <Compile Include="Registrations\DataAccessRegistrations\LoadEntititiesFromEntityStorageRegistrations.cs" />
+    <Compile Include="Registrations\DataLayerRegistrations\AzureServiceBus\AzureServiceBusQueueRegistrations.cs" />
+    <Compile Include="Registrations\DataLayerRegistrations\AzureSqlDatabase\AzureSqlDatabaseContextRegistrations.cs" />
+    <Compile Include="Registrations\DataLayerRegistrations\DataFactories\DataFactoryInterfaceRegistrations.cs" />
+    <Compile Include="Registrations\DataLayerRegistrations\DataFactories\DataFactoryRegistrations.cs" />
+    <Compile Include="Registrations\DataLayerRegistrations\DataFactories\DataGeneratorRegistrations.cs" />
+    <Compile Include="Registrations\DataLayerRegistrations\Entities\EntityRegistrations.cs" />
+    <Compile Include="Registrations\WorkersRegistrations\Utils\WorkerContainerInstallerRegistrations.cs" />
+    <Compile Include="Registrations\WorkersRegistrations\WorkerMainRegistrations.cs" />
+    <Compile Include="Templates\ApiLayerTemplates\Utils\CustomHttpActivatorTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomHttpActivatorTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\Utils\WebApiContainerInstallerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WebApiContainerInstallerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\BusinessLayerTemplates\ActionBaseTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionBaseTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\BusinessLayerTemplates\ActionTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActionTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\BusinessLayerTemplates\SequenceOperationTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SequenceOperationTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Generators\SolutionGenerators\AppConfigs\LibraryAppConfigGenerator.cs" />
+    <Compile Include="Generators\SolutionGenerators\AssemblyFiles\ConsoleAssemblyFileGenerator.cs" />
+    <Compile Include="Generators\SolutionGenerators\AssemblyFiles\LibraryAssemblyFileGenerator.cs" />
+    <Compile Include="Generators\SolutionGenerators\AssemblyFiles\WebApiAssemblyFileGenerator.cs" />
+    <Compile Include="Generators\SolutionGenerators\AssemblyInfoModelGenerator.cs" />
+    <Compile Include="Generators\SolutionGenerators\Packages\PackagesConfigGenerator.cs" />
+    <Compile Include="Generators\SolutionGenerators\SolutionFileGenerator.cs" />
+    <Compile Include="Generators\BusinessLayerGenerators\Services\HandlerGenerator.cs" />
+    <Compile Include="Generators\Workers\WorkerMainGenerator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\ApiLayerTemplates\App_Start\WebApiConfigTemplate.cs">
+      <DependentUpon>WebApiConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\Controllers\ActionControllerTemplate.cs">
+      <DependentUpon>ActionControllerTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\GlobalAsaxCsTemplate.cs">
+      <DependentUpon>GlobalAsaxCsTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\GlobalAsaxTemplate.cs">
+      <DependentUpon>GlobalAsaxTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\WebConfigTemplate.cs">
+      <DependentUpon>WebConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\WebDebugConfigTemplate.cs">
+      <DependentUpon>WebDebugConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\ApiLayerTemplates\WebReleaseConfigTemplate.cs">
+      <DependentUpon>WebReleaseConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Communication\AddMessageToQueueTemplate.cs">
+      <DependentUpon>AddMessageToQueueTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\Computing\ComputeFactorialTemplate1.cs">
+      <DependentUpon>ComputeFactorialTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataAccess\InsertEntityToEntityStorageTemplate.cs">
+      <DependentUpon>InsertEntityToEntityStorageTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataAccess\LoadEntitiesFromEntityStorageTemplate.cs">
+      <DependentUpon>LoadEntitiesFromEntityStorageTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\AzureMessageQueue\AzureServiceBusQueueTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureServiceBusQueueTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\Entities\EntityInterfaceTemplate.cs">
+      <DependentUpon>EntityInterfaceTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\Entities\EntityTemplate.cs">
+      <DependentUpon>EntityTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\DataFactories\DataFactoryInterfaceTemplate.cs">
+      <DependentUpon>DataFactoryInterfaceTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\DataFactories\DataFactoryTemplate.cs">
+      <DependentUpon>DataFactoryTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\DataFactories\DataGeneratorTemplate.cs">
+      <DependentUpon>DataGeneratorTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\DataLayerTemplates\AzureSql\AzureSqlDatabaseContextTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AzureSqlDatabaseContextTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\AppConfigs\LibraryAppConfigTemplate.cs">
+      <DependentUpon>LibraryAppConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\ConsoleAssemblyFileTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsoleAssemblyFileTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\LibraryAssemblyTemplate.cs">
+      <DependentUpon>LibraryAssemblyTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\NuGets\LibraryPackageConfigTemplate.cs">
+      <DependentUpon>LibraryPackageConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\NuGets\WebApiPackageConfigTemplate.cs">
+      <DependentUpon>WebApiPackageConfigTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\Properties\AssemblyInfoTemplate.cs">
+      <DependentUpon>AssemblyInfoTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\Assemblies\WebApiAssemblyTemplate.cs">
+      <DependentUpon>WebApiAssemblyTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\SolutionTemplates\SolutionFileTemplate.cs">
+      <DependentUpon>SolutionFileTemplate.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Templates\BusinessLayerTemplates\Services\HandlerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HandlerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Workers\Utils\WorkerContainerInstallerTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkerContainerInstallerTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Workers\WorkerMainTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WorkerMainTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CloudPrototyper.Azure\CloudPrototyper.Azure.csproj">
+      <Project>{458DEEBD-4F4A-4EE3-AD98-38ABCA75E0E3}</Project>
+      <Name>CloudPrototyper.Azure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudPrototyper.Interface\CloudPrototyper.Interface.csproj">
+      <Project>{723260e4-7eca-4c4c-8102-3c461161ece3}</Project>
+      <Name>CloudPrototyper.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudPrototyper.Model\CloudPrototyper.Model.csproj">
+      <Project>{7BCD1EBC-B3C8-4172-8DB0-4C0B8058F0CA}</Project>
+      <Name>CloudPrototyper.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudPrototyper.NET.Interface\CloudPrototyper.NET.Interface.csproj">
+      <Project>{1233f9d6-548b-4c1e-b8d1-3b24b2de775a}</Project>
+      <Name>CloudPrototyper.NET.Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\ApiLayerTemplates\Utils\CustomHttpActivatorTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>CustomHttpActivatorTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\Utils\WebApiContainerInstallerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebApiContainerInstallerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\BusinessLayerTemplates\ActionBaseTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ActionBaseTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\BusinessLayerTemplates\ActionTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ActionTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\BusinessLayerTemplates\SequenceOperationTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SequenceOperationTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\App_Start\WebApiConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebApiConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\Controllers\ActionControllerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ActionControllerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\GlobalAsaxCsTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GlobalAsaxCsTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\GlobalAsaxTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>GlobalAsaxTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\WebConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\WebDebugConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebDebugConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\ApiLayerTemplates\WebReleaseConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebReleaseConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Communication\AddMessageToQueueTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AddMessageToQueueTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Computing\ComputeFactorialTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ComputeFactorialTemplate1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataAccess\InsertEntityToEntityStorageTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>InsertEntityToEntityStorageTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataAccess\LoadEntitiesFromEntityStorageTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LoadEntitiesFromEntityStorageTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\AzureMessageQueue\AzureServiceBusQueueTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AzureServiceBusQueueTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\Entities\EntityInterfaceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EntityInterfaceTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\Entities\EntityTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EntityTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\DataFactories\DataFactoryInterfaceTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DataFactoryInterfaceTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\DataFactories\DataFactoryTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DataFactoryTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\DataFactories\DataGeneratorTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>DataGeneratorTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\DataLayerTemplates\AzureSql\AzureSqlDatabaseContextTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AzureSqlDatabaseContextTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\AppConfigs\LibraryAppConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LibraryAppConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\ConsoleAssemblyFileTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ConsoleAssemblyFileTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\LibraryAssemblyTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LibraryAssemblyTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\NuGets\LibraryPackageConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LibraryPackageConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\NuGets\WebApiPackageConfigTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebApiPackageConfigTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\Properties\AssemblyInfoTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AssemblyInfoTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\Assemblies\WebApiAssemblyTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WebApiAssemblyTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\SolutionTemplates\SolutionFileTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SolutionFileTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\BusinessLayerTemplates\Services\HandlerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HandlerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Workers\Utils\WorkerContainerInstallerTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WorkerContainerInstallerTemplate.cs</LastGenOutput>
+    </Content>
+    <Content Include="Templates\Workers\WorkerMainTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>WorkerMainTemplate.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Templates\packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

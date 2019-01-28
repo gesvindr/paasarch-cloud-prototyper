@@ -1,0 +1,41 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Common.Generators.DataLayerGenerators.Entities.EntityGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.WindowsAzure.Storage.Table;
+// Entity
+namespace <#=Model.Namespace#>
+{
+    public class <#=Model.Name#> : TableEntity,<#= Model.EntityInterface.Namespace #>.<#= Model.EntityInterface.Name #>
+    {
+		private int _id;
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+		public int Id { get { return _id; } set { RowKey = value.ToString().PadLeft(9, '0'); PartitionKey = "p"; _id = value; } }
+<#foreach(var prop in Model.ModelParameters.Properties.Where(x=>x.Name != "Id")) {#>
+		public <# if(prop.IsMany) { #> 
+		List<<#= prop.Type #>> <# } else { #> <#= prop.Type #> <# }#> <#= prop.Name #> { get; set; }
+<#}#>
+
+		public static int GetContentSize(string propertyName)
+		{
+			try {
+			Dictionary<string, int> sizeDict = new Dictionary<string, int>();
+<#foreach(var prop in Model.ModelParameters.Properties) {#>
+			sizeDict.Add("<#=prop.Name#>",<#= prop.ContentSize #>);
+<#}#>
+			return sizeDict[propertyName];
+			} 
+			catch(Exception)
+			{
+				return -1;
+			}
+		}
+	}
+}

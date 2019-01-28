@@ -1,0 +1,123 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.TblStorage.Generators.AzureTableStorageContextGenerator" name="Model" #>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.WindowsAzure.Storage;
+using Microsoft.WindowsAzure.Storage.Table;
+using Microsoft.WindowsAzure.Storage.Table.Protocol;
+//Azure table storage
+namespace <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.StorageInterface.Namespace #>.<#= Model.StorageInterface.Name #>
+    {
+		private readonly Dictionary<string, Tuple<Type,int>> _names = new Dictionary<string, Tuple<Type,int>>();
+		private readonly CloudStorageAccount _storageAccount = CloudStorageAccount.Parse("<#= Model.ModelParameters.ConnectionString #>");
+		private readonly CloudTableClient _tableClient;
+		public const string Name = "<#= Model.ModelParameters.Name #>";
+		public <#= Model.Name #>() 
+		{ 
+			InitDictionary();
+			_tableClient = _storageAccount.CreateCloudTableClient();
+		}
+		
+        public string GetName()
+        {
+            return "<#= Model.Key #>";
+        }
+		
+		public List<object> GetEntities(string entitySetName, string entityName, <#= Model.Query.Namespace #>.<#= Model.Query.Name #> query)
+		{
+<# foreach(var entitySet in Model.ModelParameters.EntitySets) { #>
+			if(entitySetName == "<#= entitySet.Name #>")
+			{
+				CloudTable table = _tableClient.GetTableReference(entitySetName);
+				TableQuery<<#= Model.Entities.Single(x=>x.Key == entitySet.EntityName).Namespace #>.<#= Model.Entities.Single(x=>x.Key == entitySet.EntityName).Name #>> tableQuery = new TableQuery<<#= Model.Entities.Single(x=>x.Key == entitySet.EntityName).Namespace #>.<#= Model.Entities.Single(x=>x.Key == entitySet.EntityName).Name #>>();
+                if (query.IsNominal)
+                {
+                    if (query.PropertyName == "Id")
+                    {
+                        var qId = tableQuery.Where(
+                        TableQuery.CombineFilters(
+                        TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "p"),
+                        TableOperators.And,
+                        TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.Equal, query.NominalParameter)));
+                        return table.ExecuteQuery(qId).Cast<object>().ToList();
+                    }
+                    var q = tableQuery.Where(TableQuery.GenerateFilterCondition(query.PropertyName, QueryComparisons.Equal, query.NominalParameter));
+                    return table.ExecuteQuery(q).Cast<object>().ToList();
+                }
+				 if (query.PropertyName == "Id")
+                    {
+                        var qId = tableQuery.Where(
+                            TableQuery.CombineFilters(
+                                TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "p"),
+                                TableOperators.And,
+                                TableQuery.CombineFilters(
+                                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.GreaterThanOrEqual, query.MinValue), 
+                                    TableOperators.And, 
+                                    TableQuery.GenerateFilterCondition("RowKey", QueryComparisons.LessThanOrEqual, query.MaxValue
+                                 )
+                          )));
+                        return table.ExecuteQuery(qId).Cast<object>().ToList();
+                    }
+                var queryRange = tableQuery.Where(
+                    TableQuery.CombineFilters(
+                        TableQuery.GenerateFilterCondition(query.PropertyName, QueryComparisons.GreaterThanOrEqual, query.MinValue),
+                        TableOperators.And,
+                        TableQuery.GenerateFilterCondition(query.PropertyName, QueryComparisons.LessThanOrEqual, query.MaxValue)));
+                return table.ExecuteQuery(queryRange).Cast<object>().ToList();
+			} 
+<# } #>
+			
+			return new List<object>();
+		}
+
+
+		public void InsertAll(string entitySetName, string entityName, object[] toInsert)
+		{
+		    CloudTable table = _tableClient.GetTableReference(entitySetName);
+		    table.CreateIfNotExists();
+		    TableBatchOperation batchOperation = new TableBatchOperation();
+			int count = 0;
+		    foreach (var obj in toInsert)
+		    {
+		        count++;
+		        if (count >= TableConstants.TableServiceBatchMaximumOperations-1)
+		        {
+		            table.ExecuteBatch(batchOperation);
+		            batchOperation = new TableBatchOperation();
+		            count = 0;
+		        }
+		        batchOperation.InsertOrReplace(obj as TableEntity);
+            }
+		    table.ExecuteBatch(batchOperation);
+		}
+
+		public void Insert(string entitySetName,string entityName, int count)
+		{
+			object[] generated = null;
+<# foreach(var entity in Model.Entities) { #>
+			if(entityName == "<#= entity.Name #>")
+			{
+				generated = <#=Model.DataGenerator.Namespace#>.<#= Model.DataGenerator.Name #>.GetInstance().Generate<<#=entity.Namespace#>.<#= entity.Name #>>(count).ToArray();
+
+			} 
+<# } #>
+			InsertAll(entitySetName,entityName,generated);
+
+		}
+
+		private void InitDictionary()
+        {
+<# foreach(var set in Model.ModelParameters.EntitySets) { #>
+			_names.Add("<#= set.Name #>", new Tuple<Type,int>(typeof(<#= Model.Entities.Single(x=>x.Name == set.EntityName).Namespace #>.<#=  Model.Entities.Single(x=>x.Name == set.EntityName).Name #>),<#=set.Count#>));
+<# } #>
+        }
+
+    }
+}

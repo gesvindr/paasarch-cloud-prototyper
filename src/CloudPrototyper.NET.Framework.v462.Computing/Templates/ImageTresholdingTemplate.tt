@@ -1,0 +1,44 @@
+﻿<#@ template language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ parameter type="CloudPrototyper.NET.Framework.v462.Computing.Generators.ImageTresholdingGenerator" name="Model" #>
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Threading;
+// Image tresholding operation
+namespace  <#= Model.Namespace #> 
+{
+    public class <#= Model.Name #> : <#= Model.OperationInterface.Namespace #>.<#= Model.OperationInterface.Name #>
+    {
+		public const string Key = "<#= Model.ModelParameters.Name #>";
+
+		public void Execute(List<string> outputs) 
+		{
+			using(Bitmap bitmap = new Bitmap(Path.Combine(System.AppContext.BaseDirectory, "bin","contents", "<#= Model.ModelParameters.Name #>", "lenna.png")))
+			{
+					for(int i = 0; i < bitmap.Height; i++)
+					{
+						for(int j = 0; j < bitmap.Width; j++)
+						{	
+							var pixel = bitmap.GetPixel(i,j);
+							if (pixel.R + pixel.B + pixel.G >= 3*128)
+							{
+								bitmap.SetPixel(
+									i, j, Color.White
+								);
+							}
+							else
+							{
+								bitmap.SetPixel(
+									i, j, Color.Black
+								);
+							}
+						}
+					}
+			}	
+		}
+	}
+}

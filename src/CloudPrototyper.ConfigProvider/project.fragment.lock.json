@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "exports": {
+    "CloudPrototyper.Interface/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.Interface.dll": {}
+      },
+      "runtime": {
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.Interface.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.Interface.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "CloudPrototyper.Model/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.6.2",
+      "compile": {
+        "bin/Debug/CloudPrototyper.Model.dll": {}
+      },
+      "runtime": {
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.Platform.dll": {},
+        "../packages/Microsoft.IdentityModel.Clients.ActiveDirectory.3.13.9/lib/net45/Microsoft.IdentityModel.Clients.ActiveDirectory.dll": {},
+        "../packages/Newtonsoft.Json.9.0.1/lib/net45/Newtonsoft.Json.dll": {},
+        "bin/Debug/CloudPrototyper.Model.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/CloudPrototyper.Model.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
